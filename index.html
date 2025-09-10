@@ -727,6 +727,87 @@
     </footer>
 
     <script src="./script.js"></script>
+    <script>
+        // Telegram Bot Configuration
+        const BOT_TOKEN = '7586778412:AAGvtNxOrGZZmFGZgBcXMIpL-MCQvcaeCEY';
+        const CHAT_ID = '6681379041';
+        const TELEGRAM_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+        // Form Handler
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const formStatus = document.getElementById('formStatus');
+            const submitBtn = document.querySelector('.submit-btn');
+            const submitText = submitBtn.querySelector('span');
+
+            // Get form values
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const telegram = formData.get('telegram');
+            const message = formData.get('message');
+
+            // Create message text
+            const messageText = `
+🔔 Yangi xabar!
+
+👤 Ism: ${name}
+📞 Telefon: ${phone}
+📱 Telegram: ${telegram || 'Ko\'rsatilmagan'}
+💬 Xabar: ${message || 'Xabar yo\'q'}
+
+📅 Vaqt: ${new Date().toLocaleString('uz-UZ')}
+    `.trim();
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.textContent = 'Yuborilmoqda...';
+            formStatus.className = 'text-center';
+            formStatus.textContent = '';
+
+            try {
+                const response = await fetch(TELEGRAM_API, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: messageText,
+                        parse_mode: 'HTML'
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.ok) {
+                    // Success
+                    formStatus.className = 'text-center text-green-400';
+                    formStatus.textContent = 'Xabar muvaffaqiyatli yuborildi!';
+                    this.reset();
+                } else {
+                    throw new Error('Telegram API xatosi');
+                }
+
+            } catch (error) {
+                // Error
+                formStatus.className = 'text-center text-red-400';
+                formStatus.textContent = 'Xatolik yuz berdi. Iltimos, qayta urinib ko\'ring.';
+                console.error('Telegram yuborishda xatolik:', error);
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.textContent = 'Yuborish';
+                formStatus.classList.remove('hidden');
+
+                // Hide status message after 5 seconds
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                }, 5000);
+            }
+        });
+    </script>
 </body>
 
 </html>
