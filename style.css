@@ -137,15 +137,24 @@ body {
 }
 
 .flag-uz {
-    background: linear-gradient(to bottom, #1eb53a 0%, #1eb53a 33%, #ffffff 33%, #ffffff 66%, #ce1126 66%, #ce1126 100%);
+    background-image: url('./images/flags/uzbek.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .flag-en {
-    background: linear-gradient(to bottom, #b22234 0%, #b22234 7.7%, #ffffff 7.7%, #ffffff 15.4%, #b22234 15.4%);
+    background-image: url('./images/flags/english.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .flag-ru {
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 33%, #0039a6 33%, #0039a6 66%, #d52b1e 66%, #d52b1e 100%);
+    background-image: url('./images/flags/russian.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Mobile Menu Animations */
