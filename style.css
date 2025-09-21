@@ -450,11 +450,12 @@ label {
 }
 
 .portfolio-img {
-    display: grid;
-    place-items: center;
-    width: 400px;
+    
+  
+    width: 395px;
     height: 240px;
     overflow: hidden;
+    margin-left: -5%;
 }
 
 .portfolio-img img {
