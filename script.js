@@ -3,7 +3,7 @@ const translations = {
     uz: {
         "nav-home": "Asosiy",
         "nav-services": "Xizmatlar", 
-        "nav-about": "Biz Haqimizda",
+        "nav-about": "Statistika",
         "nav-portfolio": "Portfolio",
         "nav-contact": "Bog'lanish",
         "hero-modern": "Zamonaviy",
@@ -55,7 +55,7 @@ const translations = {
     en: {
         "nav-home": "Home",
         "nav-services": "Services",
-        "nav-about": "About Us",
+        "nav-about": "Statistics",
         "nav-portfolio": "Portfolio",
         "nav-contact": "Contact",
         "hero-modern": "Modern",
@@ -107,7 +107,7 @@ const translations = {
     ru: {
         "nav-home": "Главная",
         "nav-services": "Услуги", 
-        "nav-about": "О нас",
+        "nav-about": "Cтатистика",
         "nav-portfolio": "Портфолио",
         "nav-contact": "Контакты",
         "hero-modern": "Современные",
