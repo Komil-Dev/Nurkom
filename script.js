@@ -49,7 +49,8 @@ const translations = {
         "form-message": "Xabar",
         "form-submit": "Yuborish",
         "footer-copyright": "© 2025 Nurkom. Barcha huquqlar himoyalangan.",
-        "footer-text": "© 2025 Nurkom — Professional veb-saytlar va Telegram botlar yaratish xizmati."
+        "footer-text": "© 2025 Nurkom — Professional veb-saytlar va Telegram botlar yaratish xizmati.",
+        "statistika":"Statistika"
     },
     en: {
         "nav-home": "Home",
@@ -100,7 +101,8 @@ const translations = {
         "form-message": "Message",
         "form-submit": "Send",
         "footer-copyright": "© 2025 Nurkom. All rights reserved.",
-        "footer-text": "© 2025 Nurkom — Professional website and Telegram bot development services."
+        "footer-text": "© 2025 Nurkom — Professional website and Telegram bot development services.",
+           "statistika":"Statistics"
     },
     ru: {
         "nav-home": "Главная",
@@ -152,7 +154,8 @@ const translations = {
         "form-message": "Сообщение",
         "form-submit": "Отправить",
         "footer-copyright": "© 2025 Nurkom. Все права защищены.",
-        "footer-text": "© 2025 Nurkom — Профессиональная разработка веб-сайтов и Telegram ботов."
+        "footer-text": "© 2025 Nurkom — Профессиональная разработка веб-сайтов и Telegram ботов.",
+           "statistika":"Cтатистика"
     }
 };
 
