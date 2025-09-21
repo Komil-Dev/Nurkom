@@ -513,14 +513,14 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <!-- Contact Info -->
                 <div
-                    class="contact-info backdrop-blur-sm bg-[rgba(255,255,255,0.03)] p-6  border border-[rgba(255,255,255,0.1)]">
+                    class="contact-info backdrop-blur-sm bg-[rgba(255,255,255,0.03)] p-6 border border-[rgba(255,255,255,0.1)]">
                     <h3 class="text-2xl font-semibold mb-4" data-key="contact-subtitle">Biz bilan bog'laning</h3>
                     <p class="text-gray-300 mb-8" data-key="contact-description">Sizning loyihangiz bo'yicha maslahat
                         olish yoki xizmatlarimiz haqida ko'proq ma'lumot olish uchun bizga murojaat qiling.</p>
 
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4">
-                            <div class="bg-[rgba(0,255,170,0.1)] p-3 ">
+                            <div class="bg-[rgba(0,255,170,0.1)] p-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
                                     class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -534,7 +534,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4">
-                            <div class="bg-[rgba(0,255,170,0.1)] p-3 ">
+                            <div class="bg-[rgba(0,255,170,0.1)] p-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
                                     class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -548,7 +548,7 @@
                         </div>
 
                         <div class="flex items-start space-x-4">
-                            <div class="bg-[rgba(0,255,170,0.1)] p-3 ">
+                            <div class="bg-[rgba(0,255,170,0.1)] p-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
                                     class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -567,14 +567,14 @@
 
                 <!-- Contact Form -->
                 <div
-                    class="contact-form backdrop-blur-sm bg-[rgba(255,255,255,0.03)] p-6  border border-[rgba(255,255,255,0.1)]">
+                    class="contact-form backdrop-blur-sm bg-[rgba(255,255,255,0.03)] p-6 border border-[rgba(255,255,255,0.1)]">
                     <h3 class="text-2xl font-semibold mb-6" data-key="contact-form-title">Xabar yuborish</h3>
 
                     <form id="contactForm" class="space-y-4">
                         <div>
                             <label for="name" class="block text-gray-300 mb-1" data-key="form-name">Ismingiz</label>
                             <input type="text" id="name" name="name"
-                                class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)]  focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white"
+                                class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white"
                                 required>
                         </div>
 
@@ -582,7 +582,7 @@
                             <label for="phone" class="block text-gray-300 mb-1" data-key="form-phone">Telefon
                                 raqamingiz</label>
                             <input type="tel" id="phone" name="phone"
-                                class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)]  focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white"
+                                class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white"
                                 required>
                         </div>
 
@@ -590,7 +590,7 @@
                             <label for="telegram" class="block text-gray-300 mb-1" data-key="form-telegram">Telegram
                                 foydalanuvchi nomi</label>
                             <input type="text" id="telegram" name="telegram"
-                                class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)]  focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white"
+                                class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white"
                                 placeholder="@username">
                         </div>
 
@@ -600,17 +600,78 @@
                                 class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white resize-none"></textarea>
                         </div>
 
-                        <button type="submit"
-                            class="w-full py-3 px-6 bg-gradient-to-r from-[#00FFAA] to-[#00FFAA] text-gray-900 font-medium  rounded-[0px] text-white transition duration-300 relative overflow-hidden submit-btn">
+                        <button id="submitBtn"
+                            class="w-full py-3 px-6 bg-gradient-to-r from-[#00FFAA] to-[#00FFAA] text-gray-900 font-medium text-white transition duration-300 relative overflow-hidden submit-btn rounded-[0px]">
                             <span class="relative z-10" data-key="form-submit">Yuborish</span>
                         </button>
-
-                        <div id="formStatus" class="text-center hidden"></div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Success Modal -->
+    <div id="successModal"
+        class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="bg-black border border-[#00FFAA] p-8 max-w-md w-full mx-4 relative overflow-hidden">
+            <!-- Glow effect for modal -->
+            <div
+                class="absolute w-32 h-32 rounded-full bg-[#00FFAA] blur-3xl opacity-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            </div>
+
+            <div class="relative z-10 text-center">
+                <!-- Success Icon -->
+                <div class="mb-4 flex justify-center">
+                    <div class="bg-[rgba(0,255,170,0.1)] p-4 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
+                            class="w-12 h-12">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-[#00FFAA] mb-2">Muvaffaqiyat!</h3>
+                <p class="text-gray-300 mb-6">Xabaringiz muvaffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz.</p>
+
+                <button id="closeModal"
+                    class="px-6 py-2 bg-gradient-to-r from-[#00FFAA] to-[#00FFAA] text-black font-medium transition duration-300 hover:shadow-lg hover:shadow-[#00FFAA]/25">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal"
+        class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="bg-black border border-red-500 p-8 max-w-md w-full mx-4 relative overflow-hidden">
+            <!-- Glow effect for modal -->
+            <div
+                class="absolute w-32 h-32 rounded-full bg-red-500 blur-3xl opacity-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            </div>
+
+            <div class="relative z-10 text-center">
+                <!-- Error Icon -->
+                <div class="mb-4 flex justify-center">
+                    <div class="bg-[rgba(255,0,0,0.1)] p-4 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ef4444"
+                            class="w-12 h-12">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl font-bold text-red-500 mb-2">Xatolik!</h3>
+                <p class="text-gray-300 mb-6">Xabar yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.</p>
+
+                <button id="closeErrorModal"
+                    class="px-6 py-2 bg-gradient-to-r from-red-500 to-red-500 text-white font-medium transition duration-300 hover:shadow-lg hover:shadow-red-500/25">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-black py-6 border-t border-gray-800">
         <div class="container mx-auto px-4">
@@ -619,88 +680,328 @@
             </p>
         </div>
     </footer>
+    <script src="./script.js">
 
-    <script src="./script.js"></script>
+    </script>
     <script>
-        // Telegram Bot Configuration
-        const BOT_TOKEN = '7586778412:AAGvtNxOrGZZmFGZgBcXMIpL-MCQvcaeCEY';
-        const CHAT_ID = '6681379041';
-        const TELEGRAM_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+        // Contact Form Configuration and Functionality
+        const CONTACT_CONFIG = {
+            BOT_TOKEN: '7586778412:AAGvtNxOrGZZmFGZgBcXMIpL-MCQvcaeCEY',
+            CHAT_ID: '6681379041',
+            get TELEGRAM_API() {
+                return `https://api.telegram.org/bot${this.BOT_TOKEN}/sendMessage`;
+            }
+        };
 
-        // Form Handler
-        document.getElementById('contactForm').addEventListener('submit', async function (e) {
-            e.preventDefault();
+        // Modal Functions
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        }
 
-            const formData = new FormData(this);
-            const formStatus = document.getElementById('formStatus');
-            const submitBtn = document.querySelector('.submit-btn');
-            const submitText = submitBtn.querySelector('span');
+        function hideModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-            // Get form values
-            const name = formData.get('name');
-            const phone = formData.get('phone');
-            const telegram = formData.get('telegram');
-            const message = formData.get('message');
+        // Initialize Contact Form
+        function initContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            if (!contactForm) return;
 
-            // Create message text
-            const messageText = `
-🔔 Yangi xabar!
+            // Modal Event Listeners
+            const closeModal = document.getElementById('closeModal');
+            const closeErrorModal = document.getElementById('closeErrorModal');
+            const successModal = document.getElementById('successModal');
+            const errorModal = document.getElementById('errorModal');
+
+            if (closeModal) {
+                closeModal.addEventListener('click', () => {
+                    hideModal('successModal');
+                });
+            }
+
+            if (closeErrorModal) {
+                closeErrorModal.addEventListener('click', () => {
+                    hideModal('errorModal');
+                });
+            }
+
+            // Close modal when clicking outside
+            if (successModal) {
+                successModal.addEventListener('click', (e) => {
+                    if (e.target === e.currentTarget) {
+                        hideModal('successModal');
+                    }
+                });
+            }
+
+            if (errorModal) {
+                errorModal.addEventListener('click', (e) => {
+                    if (e.target === e.currentTarget) {
+                        hideModal('errorModal');
+                    }
+                });
+            }
+
+            // Close modals with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    hideModal('successModal');
+                    hideModal('errorModal');
+                }
+            });
+
+            // Form Submit Handler
+            contactForm.addEventListener('submit', handleFormSubmit);
+
+            // Also add click handler to button as backup
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleFormSubmit(e);
+                });
+            }
+
+            async function handleFormSubmit(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const formData = new FormData(contactForm);
+                const submitBtn = document.getElementById('submitBtn');
+                const submitText = submitBtn ? submitBtn.querySelector('span') : null;
+
+                if (!submitBtn || !submitText) {
+                    console.error('Submit button not found');
+                    return false;
+                }
+
+                const originalText = submitText.textContent;
+
+                // Get form values
+                const name = formData.get('name');
+                const phone = formData.get('phone');
+                const telegram = formData.get('telegram');
+                const message = formData.get('message');
+
+                // Validate required fields
+                if (!name || !phone) {
+                    showModal('errorModal');
+                    return false;
+                }
+
+                // Create message text based on current language
+                const messageTexts = {
+                    uz: `🔔 Yangi xabar!
 
 👤 Ism: ${name}
 📞 Telefon: ${phone}
 📱 Telegram: ${telegram || 'Ko\'rsatilmagan'}
 💬 Xabar: ${message || 'Xabar yo\'q'}
 
-📅 Vaqt: ${new Date().toLocaleString('uz-UZ')}
-    `.trim();
+📅 Vaqt: ${new Date().toLocaleString('uz-UZ')}`,
 
-            // Show loading state
-            submitBtn.disabled = true;
-            submitText.textContent = 'Yuborilmoqda...';
-            formStatus.className = 'text-center';
-            formStatus.textContent = '';
+                    en: `🔔 New Message!
 
-            try {
-                const response = await fetch(TELEGRAM_API, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        chat_id: CHAT_ID,
-                        text: messageText,
-                        parse_mode: 'HTML'
-                    })
-                });
+👤 Name: ${name}
+📞 Phone: ${phone}
+📱 Telegram: ${telegram || 'Not provided'}
+💬 Message: ${message || 'No message'}
 
-                const result = await response.json();
+📅 Time: ${new Date().toLocaleString('en-US')}`,
 
-                if (result.ok) {
-                    // Success
-                    formStatus.className = 'text-center text-green-400';
-                    formStatus.textContent = 'Xabar muvaffaqiyatli yuborildi!';
-                    this.reset();
-                } else {
-                    throw new Error('Telegram API xatosi');
+                    ru: `🔔 Новое сообщение!
+
+👤 Имя: ${name}
+📞 Телефон: ${phone}
+📱 Telegram: ${telegram || 'Не указан'}
+💬 Сообщение: ${message || 'Нет сообщения'}
+
+📅 Время: ${new Date().toLocaleString('ru-RU')}`
+                };
+
+                const messageText = messageTexts[currentLang] || messageTexts.uz;
+
+                // Show loading state
+                submitBtn.disabled = true;
+                submitText.textContent = getLoadingText();
+                submitBtn.style.opacity = '0.7';
+
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+
+                    const response = await fetch(CONTACT_CONFIG.TELEGRAM_API, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            chat_id: CONTACT_CONFIG.CHAT_ID,
+                            text: messageText,
+                            parse_mode: 'HTML'
+                        }),
+                        signal: controller.signal
+                    });
+
+                    clearTimeout(timeoutId);
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.ok) {
+                        // Success - Show success modal and reset form
+                        showModal('successModal');
+                        contactForm.reset();
+                        trackEvent('form_submit_success');
+                    } else {
+                        throw new Error(`Telegram API error: ${result.description || 'Unknown error'}`);
+                    }
+
+                } catch (error) {
+                    // Error - Show error modal
+                    showModal('errorModal');
+                    console.error('Telegram sending error:', error);
+                    trackEvent('form_submit_error', { error: error.message });
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitText.textContent = originalText;
+                    submitBtn.style.opacity = '1';
                 }
-
-            } catch (error) {
-                // Error
-                formStatus.className = 'text-center text-red-400';
-                formStatus.textContent = 'Xatolik yuz berdi. Iltimos, qayta urinib ko\'ring.';
-                console.error('Telegram yuborishda xatolik:', error);
-            } finally {
-                // Reset button state
-                submitBtn.disabled = false;
-                submitText.textContent = 'Yuborish';
-                formStatus.classList.remove('hidden');
-
-                // Hide status message after 5 seconds
-                setTimeout(() => {
-                    formStatus.classList.add('hidden');
-                }, 5000);
             }
-        });
+        }
+
+        // Get loading text based on current language
+        function getLoadingText() {
+            const loadingTexts = {
+                uz: 'Yuborilmoqda...',
+                en: 'Sending...',
+                ru: 'Отправка...'
+            };
+            return loadingTexts[currentLang] || loadingTexts.uz;
+        }
+
+        // Update modal texts based on language
+        function updateModalTexts() {
+            const successModal = document.getElementById('successModal');
+            const errorModal = document.getElementById('errorModal');
+
+            if (successModal) {
+                const title = successModal.querySelector('h3');
+                const description = successModal.querySelector('p');
+                const button = successModal.querySelector('#closeModal');
+
+                const successTexts = {
+                    uz: {
+                        title: 'Muvaffaqiyat!',
+                        description: 'Xabaringiz muvaffaqiyatli yuborildi. Tez orada siz bilan bog\'lanamiz.',
+                        button: 'OK'
+                    },
+                    en: {
+                        title: 'Success!',
+                        description: 'Your message has been sent successfully. We will contact you soon.',
+                        button: 'OK'
+                    },
+                    ru: {
+                        title: 'Успех!',
+                        description: 'Ваше сообщение было успешно отправлено. Мы свяжемся с вами в ближайшее время.',
+                        button: 'OK'
+                    }
+                };
+
+                const texts = successTexts[currentLang] || successTexts.uz;
+                if (title) title.textContent = texts.title;
+                if (description) description.textContent = texts.description;
+                if (button) button.textContent = texts.button;
+            }
+
+            if (errorModal) {
+                const title = errorModal.querySelector('h3');
+                const description = errorModal.querySelector('p');
+                const button = errorModal.querySelector('#closeErrorModal');
+
+                const errorTexts = {
+                    uz: {
+                        title: 'Xatolik!',
+                        description: 'Xabar yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko\'ring.',
+                        button: 'OK'
+                    },
+                    en: {
+                        title: 'Error!',
+                        description: 'An error occurred while sending the message. Please try again.',
+                        button: 'OK'
+                    },
+                    ru: {
+                        title: 'Ошибка!',
+                        description: 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.',
+                        button: 'OK'
+                    }
+                };
+
+                const texts = errorTexts[currentLang] || errorTexts.uz;
+                if (title) title.textContent = texts.title;
+                if (description) description.textContent = texts.description;
+                if (button) button.textContent = texts.button;
+            }
+        }
+
+        // Update the existing changeLanguage function to include modal text updates
+        function changeLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update language display
+            const currentFlag = document.getElementById('current-flag');
+            const mobileCurrentFlag = document.getElementById('mobile-current-flag');
+            const currentLangText = document.getElementById('current-lang');
+            const mobileCurrentLangText = document.getElementById('mobile-current-lang');
+
+            if (currentFlag && currentLangText) {
+                const flagClass = `flag-${lang}`;
+                currentFlag.className = `language-flag ${flagClass}`;
+                currentLangText.textContent = lang.toUpperCase();
+            }
+
+            if (mobileCurrentFlag && mobileCurrentLangText) {
+                const flagClass = `flag-${lang}`;
+                mobileCurrentFlag.className = `language-flag ${flagClass} w-4 h-3`;
+                mobileCurrentLangText.textContent = lang.toUpperCase();
+            }
+
+            // Update active state
+            document.querySelectorAll('.language-option').forEach(option => {
+                option.classList.toggle('active', option.dataset.lang === lang);
+            });
+
+            // Update form placeholders
+            updateFormPlaceholders(lang);
+
+            // Update modal texts
+            updateModalTexts();
+        }
     </script>
 </body>
 
