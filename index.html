@@ -688,11 +688,11 @@
     </div>
     <script src="./script.js"></script>
     <script>
-        // Telegram Bot Configuration
+
         const BOT_TOKEN = '8346251490:AAG8l3a2aHB4oaVE8f3D1-J7QjX7B8bMYrI';
         const CHAT_ID = '6681379041';
 
-        // DOM Elements
+
         const contactForm = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
         const successModal = document.getElementById('successModal');
@@ -700,11 +700,11 @@
         const closeModal = document.getElementById('closeModal');
         const closeErrorModal = document.getElementById('closeErrorModal');
 
-        // Send message to Telegram using a CORS proxy
+
         async function sendToTelegram(message) {
             const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
-            // Using a CORS proxy to bypass CORS restrictions
+
             const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
             const url = proxyUrl + telegramUrl;
 
