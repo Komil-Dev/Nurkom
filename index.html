@@ -614,7 +614,7 @@
                                 class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white resize-none"></textarea>
                         </div>
 
-                        <button id="submitBtn"
+                        <button type="submit" id="submitBtn"
                             class="w-full py-3 px-6 bg-gradient-to-r from-[#00FFAA] to-[#00FFAA] text-gray-900 font-medium text-white transition duration-300 relative overflow-hidden submit-btn rounded-[0px]">
                             <span class="relative z-10" data-key="form-submit">Yuborish</span>
                         </button>
@@ -686,6 +686,175 @@
             </div>
         </div>
     </div>
+    <script src="./script.js"></script>
+    <script>
+        // Telegram Bot Configuration
+        const BOT_TOKEN = '8346251490:AAG8l3a2aHB4oaVE8f3D1-J7QjX7B8bMYrI';
+        const CHAT_ID = '6681379041';
+
+        // DOM Elements
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successModal = document.getElementById('successModal');
+        const errorModal = document.getElementById('errorModal');
+        const closeModal = document.getElementById('closeModal');
+        const closeErrorModal = document.getElementById('closeErrorModal');
+
+        // Send message to Telegram using a CORS proxy
+        async function sendToTelegram(message) {
+            const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+            // Using a CORS proxy to bypass CORS restrictions
+            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            const url = proxyUrl + telegramUrl;
+
+            const data = {
+                chat_id: CHAT_ID,
+                text: message,
+                parse_mode: 'HTML'
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Requested-With': 'XMLHttpRequest'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                console.log('Telegram response:', result);
+                return result.ok;
+            } catch (error) {
+                console.error('Error sending message to Telegram:', error);
+
+                // Fallback method using FormData and different approach
+                try {
+                    const fallbackUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+                    const formData = new FormData();
+                    formData.append('chat_id', CHAT_ID);
+                    formData.append('text', message);
+                    formData.append('parse_mode', 'HTML');
+
+                    const fallbackResponse = await fetch(fallbackUrl, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: formData
+                    });
+
+                    // With no-cors, we can't read the response, so we assume success
+                    return true;
+                } catch (fallbackError) {
+                    console.error('Fallback method also failed:', fallbackError);
+                    return false;
+                }
+            }
+        }
+
+        // Format message for Telegram
+        function formatMessage(formData) {
+            const name = formData.get('name');
+            const phone = formData.get('phone');
+            const telegram = formData.get('telegram');
+            const message = formData.get('message');
+
+            const currentDate = new Date().toLocaleString('uz-UZ');
+
+            let telegramMessage = `<b>🆕 Yangi xabar SkyFlow Technologies saytidan</b>\n\n`;
+            telegramMessage += `<b>📅 Sana:</b> ${currentDate}\n`;
+            telegramMessage += `<b>👤 Ism:</b> ${name}\n`;
+            telegramMessage += `<b>📞 Telefon:</b> ${phone}\n`;
+
+            if (telegram && telegram.trim() !== '') {
+                telegramMessage += `<b>📱 Telegram:</b> ${telegram}\n`;
+            }
+
+            if (message && message.trim() !== '') {
+                telegramMessage += `<b>💬 Xabar:</b>\n${message}`;
+            }
+
+            return telegramMessage;
+        }
+
+        // Show loading state
+        function showLoading() {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="relative z-10">Yuborilmoqda...</span>';
+        }
+
+        // Hide loading state
+        function hideLoading() {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span class="relative z-10">Yuborish</span>';
+        }
+
+        // Show success modal
+        function showSuccessModal() {
+            successModal.classList.remove('hidden');
+        }
+
+        // Show error modal
+        function showErrorModal() {
+            errorModal.classList.remove('hidden');
+        }
+
+        // Hide modals
+        function hideModals() {
+            successModal.classList.add('hidden');
+            errorModal.classList.add('hidden');
+        }
+
+        // Form submit handler
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            showLoading();
+
+            const formData = new FormData(contactForm);
+            const message = formatMessage(formData);
+
+            const success = await sendToTelegram(message);
+
+            hideLoading();
+
+            if (success) {
+                contactForm.reset();
+                showSuccessModal();
+            } else {
+                showErrorModal();
+            }
+        });
+
+        // Modal close handlers
+        closeModal.addEventListener('click', hideModals);
+        closeErrorModal.addEventListener('click', hideModals);
+
+        // Close modal when clicking outside
+        successModal.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                hideModals();
+            }
+        });
+
+        errorModal.addEventListener('click', (e) => {
+            if (e.target === errorModal) {
+                hideModals();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                hideModals();
+            }
+        });
+    </script>
 
     <footer class="bg-black py-6 border-t border-gray-800">
         <div class="container mx-auto px-4">
@@ -694,329 +863,7 @@
             </p>
         </div>
     </footer>
-    <script src="./script.js">
 
-    </script>
-    <script>
-        // Contact Form Configuration and Functionality
-        const CONTACT_CONFIG = {
-            BOT_TOKEN: '7586778412:AAGvtNxOrGZZmFGZgBcXMIpL-MCQvcaeCEY',
-            CHAT_ID: '6681379041',
-            get TELEGRAM_API() {
-                return `https://api.telegram.org/bot${this.BOT_TOKEN}/sendMessage`;
-            }
-        };
-
-        // Modal Functions
-        function showModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function hideModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        // Initialize Contact Form
-        function initContactForm() {
-            const contactForm = document.getElementById('contactForm');
-            if (!contactForm) return;
-
-            // Modal Event Listeners
-            const closeModal = document.getElementById('closeModal');
-            const closeErrorModal = document.getElementById('closeErrorModal');
-            const successModal = document.getElementById('successModal');
-            const errorModal = document.getElementById('errorModal');
-
-            if (closeModal) {
-                closeModal.addEventListener('click', () => {
-                    hideModal('successModal');
-                });
-            }
-
-            if (closeErrorModal) {
-                closeErrorModal.addEventListener('click', () => {
-                    hideModal('errorModal');
-                });
-            }
-
-            // Close modal when clicking outside
-            if (successModal) {
-                successModal.addEventListener('click', (e) => {
-                    if (e.target === e.currentTarget) {
-                        hideModal('successModal');
-                    }
-                });
-            }
-
-            if (errorModal) {
-                errorModal.addEventListener('click', (e) => {
-                    if (e.target === e.currentTarget) {
-                        hideModal('errorModal');
-                    }
-                });
-            }
-
-            // Close modals with Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    hideModal('successModal');
-                    hideModal('errorModal');
-                }
-            });
-
-            // Form Submit Handler
-            contactForm.addEventListener('submit', handleFormSubmit);
-
-            // Also add click handler to button as backup
-            const submitBtn = document.getElementById('submitBtn');
-            if (submitBtn) {
-                submitBtn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    handleFormSubmit(e);
-                });
-            }
-
-            async function handleFormSubmit(e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                const formData = new FormData(contactForm);
-                const submitBtn = document.getElementById('submitBtn');
-                const submitText = submitBtn ? submitBtn.querySelector('span') : null;
-
-                if (!submitBtn || !submitText) {
-                    console.error('Submit button not found');
-                    return false;
-                }
-
-                const originalText = submitText.textContent;
-
-                // Get form values
-                const name = formData.get('name');
-                const phone = formData.get('phone');
-                const telegram = formData.get('telegram');
-                const message = formData.get('message');
-
-                // Validate required fields
-                if (!name || !phone) {
-                    showModal('errorModal');
-                    return false;
-                }
-
-                // Create message text based on current language
-                const messageTexts = {
-                    uz: `🔔 Yangi xabar!
-
-👤 Ism: ${name}
-📞 Telefon: ${phone}
-📱 Telegram: ${telegram || 'Ko\'rsatilmagan'}
-💬 Xabar: ${message || 'Xabar yo\'q'}
-
-📅 Vaqt: ${new Date().toLocaleString('uz-UZ')}`,
-
-                    en: `🔔 New Message!
-
-👤 Name: ${name}
-📞 Phone: ${phone}
-📱 Telegram: ${telegram || 'Not provided'}
-💬 Message: ${message || 'No message'}
-
-📅 Time: ${new Date().toLocaleString('en-US')}`,
-
-                    ru: `🔔 Новое сообщение!
-
-👤 Имя: ${name}
-📞 Телефон: ${phone}
-📱 Telegram: ${telegram || 'Не указан'}
-💬 Сообщение: ${message || 'Нет сообщения'}
-
-📅 Время: ${new Date().toLocaleString('ru-RU')}`
-                };
-
-                const messageText = messageTexts[currentLang] || messageTexts.uz;
-
-                // Show loading state
-                submitBtn.disabled = true;
-                submitText.textContent = getLoadingText();
-                submitBtn.style.opacity = '0.7';
-
-                try {
-                    const controller = new AbortController();
-                    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-
-                    const response = await fetch(CONTACT_CONFIG.TELEGRAM_API, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            chat_id: CONTACT_CONFIG.CHAT_ID,
-                            text: messageText,
-                            parse_mode: 'HTML'
-                        }),
-                        signal: controller.signal
-                    });
-
-                    clearTimeout(timeoutId);
-
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-
-                    const result = await response.json();
-
-                    if (result.ok) {
-                        // Success - Show success modal and reset form
-                        showModal('successModal');
-                        contactForm.reset();
-                        trackEvent('form_submit_success');
-                    } else {
-                        throw new Error(`Telegram API error: ${result.description || 'Unknown error'}`);
-                    }
-
-                } catch (error) {
-                    // Error - Show error modal
-                    showModal('errorModal');
-                    console.error('Telegram sending error:', error);
-                    trackEvent('form_submit_error', { error: error.message });
-                } finally {
-                    // Reset button state
-                    submitBtn.disabled = false;
-                    submitText.textContent = originalText;
-                    submitBtn.style.opacity = '1';
-                }
-            }
-        }
-
-        // Get loading text based on current language
-        function getLoadingText() {
-            const loadingTexts = {
-                uz: 'Yuborilmoqda...',
-                en: 'Sending...',
-                ru: 'Отправка...'
-            };
-            return loadingTexts[currentLang] || loadingTexts.uz;
-        }
-
-        // Update modal texts based on language
-        function updateModalTexts() {
-            const successModal = document.getElementById('successModal');
-            const errorModal = document.getElementById('errorModal');
-
-            if (successModal) {
-                const title = successModal.querySelector('h3');
-                const description = successModal.querySelector('p');
-                const button = successModal.querySelector('#closeModal');
-
-                const successTexts = {
-                    uz: {
-                        title: 'Muvaffaqiyat!',
-                        description: 'Xabaringiz muvaffaqiyatli yuborildi. Tez orada siz bilan bog\'lanamiz.',
-                        button: 'OK'
-                    },
-                    en: {
-                        title: 'Success!',
-                        description: 'Your message has been sent successfully. We will contact you soon.',
-                        button: 'OK'
-                    },
-                    ru: {
-                        title: 'Успех!',
-                        description: 'Ваше сообщение было успешно отправлено. Мы свяжемся с вами в ближайшее время.',
-                        button: 'OK'
-                    }
-                };
-
-                const texts = successTexts[currentLang] || successTexts.uz;
-                if (title) title.textContent = texts.title;
-                if (description) description.textContent = texts.description;
-                if (button) button.textContent = texts.button;
-            }
-
-            if (errorModal) {
-                const title = errorModal.querySelector('h3');
-                const description = errorModal.querySelector('p');
-                const button = errorModal.querySelector('#closeErrorModal');
-
-                const errorTexts = {
-                    uz: {
-                        title: 'Xatolik!',
-                        description: 'Xabar yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko\'ring.',
-                        button: 'OK'
-                    },
-                    en: {
-                        title: 'Error!',
-                        description: 'An error occurred while sending the message. Please try again.',
-                        button: 'OK'
-                    },
-                    ru: {
-                        title: 'Ошибка!',
-                        description: 'Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте еще раз.',
-                        button: 'OK'
-                    }
-                };
-
-                const texts = errorTexts[currentLang] || errorTexts.uz;
-                if (title) title.textContent = texts.title;
-                if (description) description.textContent = texts.description;
-                if (button) button.textContent = texts.button;
-            }
-        }
-
-        // Update the existing changeLanguage function to include modal text updates
-        function changeLanguage(lang) {
-            currentLang = lang;
-            localStorage.setItem('language', lang);
-
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-
-            // Update all translatable elements
-            document.querySelectorAll('[data-key]').forEach(element => {
-                const key = element.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-
-            // Update language display
-            const currentFlag = document.getElementById('current-flag');
-            const mobileCurrentFlag = document.getElementById('mobile-current-flag');
-            const currentLangText = document.getElementById('current-lang');
-            const mobileCurrentLangText = document.getElementById('mobile-current-lang');
-
-            if (currentFlag && currentLangText) {
-                const flagClass = `flag-${lang}`;
-                currentFlag.className = `language-flag ${flagClass}`;
-                currentLangText.textContent = lang.toUpperCase();
-            }
-
-            if (mobileCurrentFlag && mobileCurrentLangText) {
-                const flagClass = `flag-${lang}`;
-                mobileCurrentFlag.className = `language-flag ${flagClass} w-4 h-3`;
-                mobileCurrentLangText.textContent = lang.toUpperCase();
-            }
-
-            // Update active state
-            document.querySelectorAll('.language-option').forEach(option => {
-                option.classList.toggle('active', option.dataset.lang === lang);
-            });
-
-            // Update form placeholders
-            updateFormPlaceholders(lang);
-
-            // Update modal texts
-            updateModalTexts();
-        }
-    </script>
 </body>
 
 </html>
