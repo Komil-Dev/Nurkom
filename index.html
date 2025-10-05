@@ -19,7 +19,19 @@
         integrity="sha512-yen6Id35pKUe2YHtHX4+3WZbfj3H+plT1/nqjJfAxvym+NkoFQyM6oU8vMHk2kDL2QhZGn+NrrK0XiS4dCkG4Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="google-site-verification" content="ulcgv30r6utOEc2tqLB4BYX5BTppv4IYcrG9nSQ-x2U" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
+    <!-- AOS JS (add before closing </body> tag) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true, // Whether animation should happen only once
+            offset: 100, // Offset (in px) from the original trigger point
+            easing: 'ease-in-out', // Easing function
+        });
+    </script>
 </head>
 
 <style>
@@ -218,7 +230,8 @@
 
 
 
-    <section class="relative sm:mt-10 mt-10 min-h-screen overflow-hidden bg-black flex items-center justify-center">
+    <section class="relative sm:mt-10 mt-10 min-h-screen overflow-hidden bg-black flex items-center justify-center"
+        data-aos="fade-up">
 
 
 
@@ -265,12 +278,12 @@
         </div>
     </section>
     <!-- Services Section -->
-    <section class="services max-w-7xl mx-auto px-4" id="services">
+    <section class="services max-w-7xl mx-auto px-4" id="services" data-aos="fade-up">
         <div class="grok-glow" style="top: 30%; right: 10%;"></div>
         <div class="container">
-            <h2 class="section-title gradient-text" data-key="services-title">Xizmatlar</h2>
+            <h2 class="section-title gradient-text" data-key="services-title" data-aos="fade-up">Xizmatlar</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -283,7 +296,7 @@
                     <a href="#contact" class="portfolio-button" data-key="service-order">Buyurtma berish</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -296,7 +309,7 @@
                     <a href="#contact" class="portfolio-button" data-key="service-order">Buyurtma berish</a>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
