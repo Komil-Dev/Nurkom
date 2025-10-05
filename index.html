@@ -19,19 +19,7 @@
         integrity="sha512-yen6Id35pKUe2YHtHX4+3WZbfj3H+plT1/nqjJfAxvym+NkoFQyM6oU8vMHk2kDL2QhZGn+NrrK0XiS4dCkG4Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="google-site-verification" content="ulcgv30r6utOEc2tqLB4BYX5BTppv4IYcrG9nSQ-x2U" />
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
-    <!-- AOS JS (add before closing </body> tag) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000, // Animation duration in milliseconds
-            once: true, // Whether animation should happen only once
-            offset: 100, // Offset (in px) from the original trigger point
-            easing: 'ease-in-out', // Easing function
-        });
-    </script>
 </head>
 
 <style>
@@ -232,23 +220,23 @@
 
     <section class="relative sm:mt-10 mt-10 min-h-screen overflow-hidden bg-black flex items-center justify-center">
 
+
+
         <!-- Hero Content -->
         <div class="relative z-10 container mx-auto px-6 text-center">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-bold mb-8">
-                    <div data-key="hero-modern" class="text-white mb-4" data-aos="fade-up" data-aos-delay="100">
-                        Zamonaviy</div>
-                    <div data-key="hero-digital" class="text-[#00ffaa]" data-aos="fade-up" data-aos-delay="200">Raqamli
-                        Yechimlar</div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-8 fade-up">
+                    <div data-key="hero-modern" class="text-white mb-4">Zamonaviy</div>
+                    <div data-key="hero-digital" class="text-[#00ffaa]">Raqamli Yechimlar</div>
                 </h1>
 
-                <p class="text-sm md:text-2xl text-green-100 mb-12 max-w-3xl mx-auto leading-relaxed"
-                    data-key="hero-description" data-aos="fade-up" data-aos-delay="300">
+                <p class="text-sm md:text-2xl text-green-100 mb-12 max-w-3xl mx-auto leading-relaxed fade-up delay-200"
+                    data-key="hero-description">
                     Professional veb-saytlar va Telegram botlar yaratish xizmati. Sizning biznesingiz uchun mukammal
                     raqamli yechimlarga tayyormiz.
                 </p>
 
-                <div data-aos="fade-up" data-aos-delay="400">
+                <div class="fade-up delay-400">
                     <a href="#contact"
                         class="inline-block px-8 py-[13px] bg-[#00ffaa] text-white text-xl font-semibold  border-2 border-[#00ffaa] transition-all glow-effect"
                         data-key="hero-cta">
@@ -256,32 +244,33 @@
                     </a>
                 </div>
 
+
             </div>
         </div>
 
         <!-- Additional Square Line Patterns -->
         <div class="absolute inset-0 pointer-events-none">
-            <div class="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-30"
-                data-aos="fade-right" data-aos-delay="500">
+            <div
+                class="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-30">
             </div>
-            <div class="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-20"
-                data-aos="fade-left" data-aos-delay="600">
+            <div
+                class="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-400 to-transparent opacity-20">
             </div>
-            <div class="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-green-500 to-transparent opacity-30"
-                data-aos="fade-down" data-aos-delay="700">
+            <div
+                class="absolute left-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-green-500 to-transparent opacity-30">
             </div>
-            <div class="absolute right-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-green-400 to-transparent opacity-20"
-                data-aos="fade-down" data-aos-delay="800">
+            <div
+                class="absolute right-1/4 top-0 w-px h-full bg-gradient-to-b from-transparent via-green-400 to-transparent opacity-20">
             </div>
         </div>
     </section>
     <!-- Services Section -->
-    <section class="services max-w-7xl mx-auto px-4" id="services" data-aos="fade-up">
+    <section class="services max-w-7xl mx-auto px-4" id="services">
         <div class="grok-glow" style="top: 30%; right: 10%;"></div>
         <div class="container">
-            <h2 class="section-title gradient-text" data-key="services-title" data-aos="fade-up">Xizmatlar</h2>
+            <h2 class="section-title gradient-text" data-key="services-title">Xizmatlar</h2>
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -294,7 +283,7 @@
                     <a href="#contact" class="portfolio-button" data-key="service-order">Buyurtma berish</a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -307,7 +296,7 @@
                     <a href="#contact" class="portfolio-button" data-key="service-order">Buyurtma berish</a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -327,24 +316,35 @@
     <section class="portfolio max-w-7xl mx-auto px-4" id="portfolio">
         <div class="grok-glow" style="bottom: 20%; left: 15%;"></div>
         <div class="container">
-            <h2 class="section-title gradient-text" data-key="portfolio-title" data-aos="fade-up">Portfolio</h2>
+            <h2 class="section-title gradient-text" data-key="portfolio-title">Portfolio</h2>
             <div class="portfolio-grid">
-
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="./images/portfolio/nurkom.jpg" alt="SkyFlow Technologies" />
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Nurkom</h3>
+                        <p data-key="portfolio1-description">Nurkom kompaniyasi uchun yaratilgan ushbu veb-sayt
+                            mijozlarga kompaniya haqida to'liq ma'lumot olish hamda bajarilgan loyihalar portfoliosi
+                            orqali tajribani ko'rish imkonini beradi.</p>
+                        <a href="https://www.skyflowtechnologies.uz" class="portfolio-button"
+                            data-key="portfolio1-button">Siz allaqachon saytdasiz</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/studyfans.jpg" alt="studyfans" />
                     </div>
                     <div class="portfolio-content">
                         <h3>Studyfans</h3>
                         <p data-key="portfolio-description">Talabalarga konsalting xizmatlarini taqdim etuvchi
-                            platforma. Saytda o'quv dasturlari, xorijiy universitetlar va grant imkoniyatlari haqida
-                            to'liq ma'lumot beriladi.</p>
+                            platforma. Saytda o‘quv dasturlari, xorijiy universitetlar va grant imkoniyatlari haqida
+                            to‘liq ma’lumot beriladi.</p>
                         <a href="https://studyfans.uz/" class="portfolio-button" data-key="portfolio-visit">Saytga
                             o'tish</a>
                     </div>
                 </div>
-
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-item">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/muhibacademy.jpg" alt="muhibacademy" />
                     </div>
@@ -357,23 +357,21 @@
                             o'tish</a>
                     </div>
                 </div>
-
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="portfolio-item">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/urgutplays.jpg" alt="urgutplays" />
                     </div>
                     <div class="portfolio-content">
                         <h3>Urgut Plays - admina panel</h3>
                         <p data-key="portfolio-description22">UrgutPlace platformasi uchun maxsus yaratilgan boshqaruv
-                            tizimi. Admin panel orqali do'konlarni qo'shish va o'chirish, mahsulotlarni va
-                            kategoriyalarni boshqarish, foydalanuvchi so'rovlari va buyurtmalarini nazorat qilish
+                            tizimi. Admin panel orqali do‘konlarni qo‘shish va o‘chirish, mahsulotlarni va
+                            kategoriyalarni boshqarish, foydalanuvchi so‘rovlari va buyurtmalarini nazorat qilish
                             imkoniyati yaratilgan</p>
                         <a href="#" class="portfolio-button" data-key="portfolio-visit">Saytga
                             o'tish</a>
                     </div>
                 </div>
-
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-item">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/hmmexport.jpg" alt="HMM Export" />
                     </div>
@@ -386,8 +384,7 @@
                             o'tish</a>
                     </div>
                 </div>
-
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-item">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/AZB.jpg" alt="AZB" />
                     </div>
@@ -400,8 +397,33 @@
                             data-key="portfolio-visit">Saytga o'tish</a>
                     </div>
                 </div>
-
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="./images/portfolio/wedday.png" alt="Wedday.uz" />
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Wedday.uz</h3>
+                        <p data-key="portfolio4-description">Wedday ilovasi uchun yaratilgan sayt foydalanuvchilarga
+                            ilova haqidagi ma'lumotlar, xizmatlar, qo'llab-quvvatlash imkoniyatlari va yangiliklarni
+                            taqdim etadi.</p>
+                        <a href="https://www.wedday.uz" class="portfolio-button" data-key="portfolio-visit">Saytga
+                            o'tish</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="./images/portfolio/tca.jpg" alt="TCA Group" />
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>TCA Group</h3>
+                        <p data-key="portfolio5-description">TCA Group kompaniyasi uchun yaratilgan ushbu veb-sayt
+                            kompaniya haqida batafsil ma'lumot olish, ishlab chiqarilgan ilovalar portfelini ko'rish va
+                            bog'lanish imkoniyatlarini taqdim etadi.</p>
+                        <a href="https://www.tcagroup.uz" class="portfolio-button" data-key="portfolio-visit">Saytga
+                            o'tish</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/lentalar.jpg" alt="Bitiruvchi lentalar" />
                     </div>
@@ -415,7 +437,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-item">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/dustlikarena.jpg" alt="Do'stlik Arena Bot" />
                     </div>
@@ -429,7 +451,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="portfolio-item">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/SodiqConsulting.jpg" alt="Sodiq Consalting" />
                     </div>
@@ -454,30 +476,30 @@
         <div class="grok-glow absolute blur-3xl bg-[#00FFAA] opacity-10"
             style="bottom: 10%; right: 10%; width: 350px; height: 350px;"></div>
         <h2 class="text-4xl font-bold mb-12 text-start bg-clip-text text-[#00FFAA] bg-gradient-to-r from-[#00FFAA] to-[#00FFAA]"
-            data-key="statistika" data-aos="fade-up">
+            data-key="statistika">
             Statistika</h2>
         <!-- Achievements Section -->
         <div class="border-t border-b border-[rgba(255,255,255,0.08)] py-14 mb-20 backdrop-blur-sm">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
-                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center">
                     <div
                         class="text-5xl font-bold bg-clip-text text-[#00FFAA] bg-gradient-to-r from-cyan-400 to-blue-500 mb-3">
                         10+</div>
                     <p class="text-[rgba(255,255,255,0.7)]" data-key="stat1">Muvaffaqiyatli Loyihalar</p>
                 </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-center">
                     <div
                         class="text-5xl font-bold bg-clip-text text-[#00FFAA] bg-gradient-to-r from-blue-400 to-indigo-500 mb-3">
                         100%</div>
                     <p class="text-[rgba(255,255,255,0.7)]" data-key="stat2">Mijozlar Mamnuniyati</p>
                 </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-center">
                     <div
                         class="text-5xl font-bold bg-clip-text text-[#00FFAA] bg-gradient-to-r from-green-800 to-purple-500 mb-3">
                         3+</div>
                     <p class="text-[rgba(255,255,255,0.7)]" data-key="stat3">Tajribali Mutaxassislar</p>
                 </div>
-                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-center">
                     <div class="text-5xl font-bold bg-clip-text text-[#00FFAA]  mb-3">
                         3</div>
                     <p class="text-[rgba(255,255,255,0.7)]" data-key="stat4">Yillik Tajriba</p>
@@ -496,19 +518,19 @@
 
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold mb-12 text-start bg-clip-text text-[#00FFAA] bg-gradient-to-r from-[#00FFAA] to-[#00FFAA]"
-                data-key="contact-title" data-aos="fade-up">
+                data-key="contact-title">
                 Bog'lanish</h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <!-- Contact Info -->
-                <div class="contact-info backdrop-blur-sm bg-[rgba(255,255,255,0.03)] p-6 border border-[rgba(255,255,255,0.1)]"
-                    data-aos="fade-right" data-aos-delay="100">
+                <div
+                    class="contact-info backdrop-blur-sm bg-[rgba(255,255,255,0.03)] p-6 border border-[rgba(255,255,255,0.1)]">
                     <h3 class="text-2xl font-semibold mb-4" data-key="contact-subtitle">Biz bilan bog'laning</h3>
                     <p class="text-gray-300 mb-8" data-key="contact-description">Sizning loyihangiz bo'yicha maslahat
                         olish yoki xizmatlarimiz haqida ko'proq ma'lumot olish uchun bizga murojaat qiling.</p>
 
                     <div class="space-y-6">
-                        <div class="flex items-start space-x-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-start space-x-4">
                             <div class="bg-[rgba(0,255,170,0.1)] p-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
                                     class="w-6 h-6">
@@ -522,7 +544,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-start space-x-4">
                             <div class="bg-[rgba(0,255,170,0.1)] p-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
                                     class="w-6 h-6">
@@ -536,7 +558,7 @@
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="flex items-start space-x-4">
                             <div class="bg-[rgba(0,255,170,0.1)] p-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
                                     class="w-6 h-6">
@@ -555,19 +577,19 @@
                 </div>
 
                 <!-- Contact Form -->
-                <div class="contact-form backdrop-blur-sm bg-[rgba(255,255,255,0.03)] p-6 border border-[rgba(255,255,255,0.1)]"
-                    data-aos="fade-left" data-aos-delay="100">
+                <div
+                    class="contact-form backdrop-blur-sm bg-[rgba(255,255,255,0.03)] p-6 border border-[rgba(255,255,255,0.1)]">
                     <h3 class="text-2xl font-semibold mb-6" data-key="contact-form-title">Xabar yuborish</h3>
 
                     <form id="contactForm" class="space-y-4">
-                        <div data-aos="fade-up" data-aos-delay="200">
+                        <div>
                             <label for="name" class="block text-gray-300 mb-1" data-key="form-name">Ismingiz</label>
                             <input type="text" id="name" name="name"
                                 class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white"
                                 required placeholder="Name">
                         </div>
 
-                        <div data-aos="fade-up" data-aos-delay="300">
+                        <div>
                             <label for="phone" class="block text-gray-300 mb-1" data-key="form-phone">Telefon
                                 raqamingiz</label>
                             <input type="tel" id="phone" name="phone"
@@ -575,7 +597,7 @@
                                 required placeholder="Phone Number">
                         </div>
 
-                        <div data-aos="fade-up" data-aos-delay="400">
+                        <div>
                             <label for="telegram" class="block text-gray-300 mb-1" data-key="form-telegram">Telegram
                                 foydalanuvchi nomi</label>
                             <input type="text" id="telegram" name="telegram"
@@ -583,15 +605,14 @@
                                 placeholder="@username">
                         </div>
 
-                        <div data-aos="fade-up" data-aos-delay="500">
+                        <div>
                             <label for="message" class="block text-gray-300 mb-1" data-key="form-message">Xabar</label>
                             <textarea id="message" name="message" rows="4"
                                 class="w-full p-3 bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.1)] focus:outline-none focus:ring-2 focus:ring-[#00FFAA] text-white resize-none"></textarea>
                         </div>
 
                         <button type="submit" id="submitBtn"
-                            class="w-full py-3 px-6 bg-gradient-to-r from-[#00FFAA] to-[#00FFAA] text-gray-900 font-medium text-white transition duration-300 relative overflow-hidden submit-btn rounded-[0px]"
-                            data-aos="fade-up" data-aos-delay="600">
+                            class="w-full py-3 px-6 bg-gradient-to-r from-[#00FFAA] to-[#00FFAA] text-gray-900 font-medium text-white transition duration-300 relative overflow-hidden submit-btn rounded-[0px]">
                             <span class="relative z-10" data-key="form-submit">Yuborish</span>
                         </button>
                     </form>
