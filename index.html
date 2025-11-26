@@ -120,15 +120,16 @@
 
 <body>
     <!-- Header -->
-    <header class="bg-black text-white shadow-lg fixed w-full top-0 z-50 ">
+    <header class="bg-black text-white shadow-lg fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <!-- Logo and Main Navigation Together -->
                 <div class="flex items-center">
                     <!-- Logo -->
-                    <div class="flex-shrink-0 flex items-center mr-8">
+                    <div class="flex-shrink-0 flex items-center mr-8" data-aos="fade-down" data-aos-duration="800">
                         <a href="#" class="group">
-                            <div class="bg-[#00ffaa] text-white px-1.5 py-1 font-semibold  text-lg ">
+                            <div class="bg-[#00ffaa] text-black px-1.5 py-1 font-semibold text-lg"
+                                style="letter-spacing: -0.01em;">
                                 NURKOM
                             </div>
                         </a>
@@ -137,50 +138,70 @@
                     <!-- Main Desktop Menu -->
                     <div class="hidden md:flex items-center space-x-8">
                         <a href="#home"
-                            class="menu-item-active text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-sm uppercase tracking-wider"
-                            data-key="nav-home">Asosiy</a>
+                            class="nav-link active text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
+                            data-key="nav-home" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100"
+                            style="letter-spacing: 0.05em;">
+                            Asosiy
+                            <span
+                                class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-[#00ffaa] transform transition-transform duration-300"></span>
+                        </a>
                         <a href="#services"
-                            class="text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-sm uppercase tracking-wider"
-                            data-key="nav-services">Xizmatlar</a>
+                            class="nav-link text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
+                            data-key="nav-services" data-aos="fade-down" data-aos-duration="800" data-aos-delay="150"
+                            style="letter-spacing: 0.05em;">
+                            Xizmatlar
+                            <span
+                                class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-[#00ffaa] transform transition-transform duration-300"></span>
+                        </a>
                         <a href="#about"
-                            class="text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-sm uppercase tracking-wider"
-                            data-key="nav-about">Statistika</a>
+                            class="nav-link text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
+                            data-key="nav-about" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200"
+                            style="letter-spacing: 0.05em;">
+                            Statistika
+                            <span
+                                class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-[#00ffaa] transform transition-transform duration-300"></span>
+                        </a>
                         <a href="#portfolio"
-                            class="text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-sm uppercase tracking-wider"
-                            data-key="nav-portfolio">Portfolio</a>
+                            class="nav-link text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
+                            data-key="nav-portfolio" data-aos="fade-down" data-aos-duration="800" data-aos-delay="250"
+                            style="letter-spacing: 0.05em;">
+                            Portfolio
+                            <span
+                                class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-[#00ffaa] transform transition-transform duration-300"></span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Language Switcher and Contact Link (right-aligned) -->
                 <div class="hidden md:flex items-center space-x-4">
                     <!-- Language Switcher -->
-                    <div class="language-switcher">
+                    <div class="language-switcher" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
                         <div id="language-btn" class="flex items-center space-x-2 px-3 py-2 text-white cursor-pointer">
                             <div class="language-flag flag-uz" id="current-flag"></div>
-                            <span id="current-lang">UZ</span>
+                            <span id="current-lang" class="text-xs font-medium">UZ</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </div>
 
                         <div id="language-dropdown" class="language-dropdown">
                             <a href="#" class="language-option" data-lang="uz">
                                 <div class="language-flag flag-uz"></div>
-                                <span>O'zbekcha</span>
+                                <span class="text-sm">O'zbekcha</span>
                             </a>
                             <a href="#" class="language-option" data-lang="en">
                                 <div class="language-flag flag-en"></div>
-                                <span>English</span>
+                                <span class="text-sm">English</span>
                             </a>
                             <a href="#" class="language-option" data-lang="ru">
                                 <div class="language-flag flag-ru"></div>
-                                <span>Русский</span>
+                                <span class="text-sm">Русский</span>
                             </a>
                         </div>
                     </div>
 
-
                     <a href="#contact"
-                        class="accent-color px-5 py-2 font-medium transition-all duration-300 border accent-border  text-sm uppercase tracking-wider hover:bg-opacity-10 hover:bg-gray-800"
-                        data-key="nav-contact">Bog'lanish</a>
+                        class="accent-color px-5 py-2 font-medium transition-all duration-300 border accent-border text-xs uppercase tracking-wider hover:bg-opacity-10 hover:bg-gray-800"
+                        data-key="nav-contact" data-aos="fade-down" data-aos-duration="800" data-aos-delay="350"
+                        style="letter-spacing: 0.05em;">Bog'lanish</a>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -190,30 +211,84 @@
                         <div id="mobile-language-btn"
                             class="flex items-center space-x-1 px-2 py-1 text-white transition-colors">
                             <div class="language-flag flag-uz w-4 h-3" id="mobile-current-flag"></div>
-                            <span id="mobile-current-lang" class="text-xs">UZ</span>
-                            <div />
-                            <div id="mobile-language-dropdown" class="language-dropdown">
-                                <a href="#" class="language-option mobile-lang-option" data-lang="uz">
-                                    <div class="language-flag flag-uz"></div>
-                                    <span>O'zbekcha</span>
-                                </a>
-                                <a href="#" class="language-option mobile-lang-option" data-lang="en">
-                                    <div class="language-flag flag-en"></div>
-                                    <span>English</span>
-                                </a>
-                                <a href="#" class="language-option mobile-lang-option" data-lang="ru">
-                                    <div class="language-flag flag-ru"></div>
-                                    <span>Русский</span>
-                                </a>
-                            </div>
+                            <span id="mobile-current-lang" class="text-xs font-medium">UZ</span>
                         </div>
 
-
+                        <div id="mobile-language-dropdown" class="language-dropdown">
+                            <a href="#" class="language-option mobile-lang-option" data-lang="uz">
+                                <div class="language-flag flag-uz"></div>
+                                <span class="text-sm">O'zbekcha</span>
+                            </a>
+                            <a href="#" class="language-option mobile-lang-option" data-lang="en">
+                                <div class="language-flag flag-en"></div>
+                                <span class="text-sm">English</span>
+                            </a>
+                            <a href="#" class="language-option mobile-lang-option" data-lang="ru">
+                                <div class="language-flag flag-ru"></div>
+                                <span class="text-sm">Русский</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </header>
 
+    <style>
+        /* Default state - hidden underline */
+        .nav-link .nav-underline {
+            transform: scaleX(0);
+        }
+
+        /* Active state - show underline */
+        .nav-link.active .nav-underline {
+            transform: scaleX(1);
+        }
+
+        /* Hover effect */
+        .nav-link:hover .nav-underline {
+            transform: scaleX(1);
+        }
+    </style>
+
+    <script>
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function setActiveLink() {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Set active link on scroll
+        window.addEventListener('scroll', setActiveLink);
+
+        // Set active link on page load
+        window.addEventListener('load', setActiveLink);
+
+        // Set active link on click
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
     <!-- Mobile Menu (initially hidden) -->
 
 
@@ -429,168 +504,255 @@
             </div>
         </div>
     </section>
-    <section class="portfolio max-w-7xl mx-auto px-4" id="portfolio">
+    <section class="portfolio max-w-7xl mx-auto px-4 py-32" id="portfolio">
         <div class="grok-glow" style="bottom: 20%; left: 15%;"></div>
         <div class="container">
-            <h2 class="section-title gradient-text" data-key="portfolio-title">Portfolio</h2>
+            <h2 class="section-title gradient-text text-4xl md:text-5xl font-semibold mb-3 text-center"
+                data-key="portfolio-title" data-aos="fade-up" data-aos-duration="800" style="letter-spacing: -0.02em;">
+                Portfolio
+            </h2>
+            <p class="text-sm text-[rgba(255,255,255,0.5)] text-center mb-16" data-aos="fade-up" data-aos-duration="800"
+                data-aos-delay="100">
+                Bizning bajarilgan loyihalarimiz
+            </p>
 
             <!-- Category Filter Buttons -->
             <div class="category-filter"
-                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px;">
+                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px;"
+                data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <button class="category-btn active" data-category="all"
-                    style="padding: 10px 24px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                    style="padding: 8px 20px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; letter-spacing: -0.01em;">
                     Barchasi
                 </button>
                 <button class="category-btn" data-category="website"
-                    style="padding: 10px 24px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                    style="padding: 8px 20px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; letter-spacing: -0.01em;">
                     Veb-saytlar
                 </button>
                 <button class="category-btn" data-category="admin"
-                    style="padding: 10px 24px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                    style="padding: 8px 20px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; letter-spacing: -0.01em;">
                     Admin Panellar
                 </button>
                 <button class="category-btn" data-category="bot"
-                    style="padding: 10px 24px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                    style="padding: 8px 20px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; letter-spacing: -0.01em;">
                     Telegram Botlar
                 </button>
             </div>
 
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="admin">
+                <div class="portfolio-item" data-category="admin" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="100">
                     <div class="portfolio-img">
-                        <img src="./images/portfolio/nurgarden.jpg" alt="studyfans" />
+                        <img src="./images/portfolio/nurgarden.jpg" alt="nurgarden" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>NurGarden</h3>
-                        <p data-key="portfolio-description-nurgarden">Oziq-ovqat mahsulotlarini ishlab chiqaruvchi
-                            kompaniya uchun
-                            yaratilgan minimalistik veb-sayt. Saytda kompaniya haqida to‘liq ma’lumot, ishlab
-                            chiqarilayotgan mahsulotlar, aloqa ma’lumotlari va hamkorlik imkoniyatlari keltirilgan.
-                            “Mahsulotlar” sahifasida har bir mahsulot batafsil ta’rif, surat va texnik ma’lumotlar bilan
-                            taqdim etiladi.</p>
-                        <a href="https://www.nurandgarden.com/" class="portfolio-button"
-                            data-key="portfolio-visit">Saytga
-                            o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            NurGarden</h3>
+                        <p data-key="portfolio-description-nurgarden"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            Oziq-ovqat mahsulotlarini ishlab chiqaruvchi kompaniya uchun yaratilgan minimalistik
+                            veb-sayt. Saytda kompaniya haqida to'liq ma'lumot, ishlab chiqarilayotgan mahsulotlar, aloqa
+                            ma'lumotlari va hamkorlik imkoniyatlari keltirilgan.
+                        </p>
+                        <a href="https://www.nurandgarden.com/" class="portfolio-button" data-key="portfolio-visit"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="admin">
+
+                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="150">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/studyfans.jpg" alt="studyfans" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>Studyfans</h3>
-                        <p data-key="portfolio-description">Talabalarga konsalting xizmatlarini taqdim etuvchi
-                            platforma. Saytda o'quv dasturlari, xorijiy universitetlar va grant imkoniyatlari haqida
-                            to'liq ma'lumot beriladi.</p>
-                        <a href="https://studyfans.uz/" class="portfolio-button" data-key="portfolio-visit">Saytga
-                            o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            Studyfans</h3>
+                        <p data-key="portfolio-description"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            Talabalarga konsalting xizmatlarini taqdim etuvchi platforma. Saytda o'quv dasturlari,
+                            xorijiy universitetlar va grant imkoniyatlari haqida to'liq ma'lumot beriladi.
+                        </p>
+                        <a href="https://studyfans.uz/" class="portfolio-button" data-key="portfolio-visit"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="admin">
+
+                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="200">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/muhibacademy.jpg" alt="muhibacademy" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>Muhibacademy</h3>
-                        <p data-key="portfolio-description2">Akademiya haqida ma'lumot beruvchi platforma. Mavjud
-                            kurslar
-                            karta ko'rinishida taqdim etiladi, har birida to'liq ma'lumot mavjud.</p>
-                        <a href="https://muhibacademy.uz/" class="portfolio-button" data-key="portfolio-visit">Saytga
-                            o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            Muhibacademy</h3>
+                        <p data-key="portfolio-description2"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            Akademiya haqida ma'lumot beruvchi platforma. Mavjud kurslar karta ko'rinishida taqdim
+                            etiladi, har birida to'liq ma'lumot mavjud.
+                        </p>
+                        <a href="https://muhibacademy.uz/" class="portfolio-button" data-key="portfolio-visit"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="admin">
+
+                <div class="portfolio-item" data-category="admin" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="250">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/urgutplays.jpg" alt="urgutplays" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>Urgut Plays - admina panel</h3>
-                        <p data-key="portfolio-description22">UrgutPlace platformasi uchun maxsus yaratilgan boshqaruv
-                            tizimi. Admin panel orqali do'konlarni qo'shish va o'chirish, mahsulotlarni va
-                            kategoriyalarni boshqarish, foydalanuvchi so'rovlari va buyurtmalarini nazorat qilish
-                            imkoniyati yaratilgan</p>
-                        <a href="#" class="portfolio-button" data-key="portfolio-visit">Saytga
-                            o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            Urgut Plays - admina panel</h3>
+                        <p data-key="portfolio-description22"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            UrgutPlace platformasi uchun maxsus yaratilgan boshqaruv tizimi. Admin panel orqali
+                            do'konlarni qo'shish va o'chirish, mahsulotlarni va kategoriyalarni boshqarish,
+                            foydalanuvchi so'rovlari va buyurtmalarini nazorat qilish imkoniyati yaratilgan
+                        </p>
+                        <a href="#" class="portfolio-button" data-key="portfolio-visit"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="website">
+
+                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="300">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/hmmexport.jpg" alt="HMM Export" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>HMM Export</h3>
-                        <p data-key="portfolio2-description">HMM Export kompaniyasi uchun yaratilgan ushbu veb-sayt
-                            mijozlarga mahsulotlar bilan tanishish, buyurtma berish, kompaniya haqida ma'lumot olish va
-                            yangiliklaridan xabardor bo'lish imkonini beradi.</p>
-                        <a href="https://www.hmmexport.com" class="portfolio-button" data-key="portfolio-visit">Saytga
-                            o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            HMM Export</h3>
+                        <p data-key="portfolio2-description"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            HMM Export kompaniyasi uchun yaratilgan ushbu veb-sayt mijozlarga mahsulotlar bilan
+                            tanishish, buyurtma berish, kompaniya haqida ma'lumot olish va yangiliklaridan xabardor
+                            bo'lish imkonini beradi.
+                        </p>
+                        <a href="https://www.hmmexport.com" class="portfolio-button" data-key="portfolio-visit"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="website">
+
+                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="350">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/AZB.jpg" alt="AZB" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>AZB company</h3>
-                        <p data-key="portfolio3-description">Abdushukur Zamin Baraka firmasi uchun yaratilgan sayt
-                            foydalanuvchilarga quruq mevalar haqidagi ma'lumotlar, xizmatlar, qo'llab-quvvatlash
-                            imkoniyatlari va yangiliklarni taqdim etadi.</p>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            AZB company</h3>
+                        <p data-key="portfolio3-description"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            Abdushukur Zamin Baraka firmasi uchun yaratilgan sayt foydalanuvchilarga quruq mevalar
+                            haqidagi ma'lumotlar, xizmatlar, qo'llab-quvvatlash imkoniyatlari va yangiliklarni taqdim
+                            etadi.
+                        </p>
                         <a href="https://www.abdushkurzaminbaraka710.uz/" class="portfolio-button"
-                            data-key="portfolio-visit">Saytga o'tish</a>
+                            data-key="portfolio-visit" style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="website">
+
+                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="400">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/tca.jpg" alt="TCA Group" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>TCA Group</h3>
-                        <p data-key="portfolio5-description">TCA Group kompaniyasi uchun yaratilgan ushbu veb-sayt
-                            kompaniya haqida batafsil ma'lumot olish, ishlab chiqarilgan ilovalar portfelini ko'rish va
-                            bog'lanish imkoniyatlarini taqdim etadi.</p>
-                        <a href="https://www.tcagroup.uz" class="portfolio-button" data-key="portfolio-visit">Saytga
-                            o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            TCA Group</h3>
+                        <p data-key="portfolio5-description"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            TCA Group kompaniyasi uchun yaratilgan ushbu veb-sayt kompaniya haqida batafsil ma'lumot
+                            olish, ishlab chiqarilgan ilovalar portfelini ko'rish va bog'lanish imkoniyatlarini taqdim
+                            etadi.
+                        </p>
+                        <a href="https://www.tcagroup.uz" class="portfolio-button" data-key="portfolio-visit"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
                     </div>
                 </div>
-                <div class="portfolio-item" data-category="website">
+
+                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="450">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/lentalar.jpg" alt="Bitiruvchi lentalar" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>Biitiruvchi Lentalar</h3>
-                        <p data-key="portfolio6-description">Bitiruvchi Lentalar kompaniyasi uchun yaratilgan ushbu
-                            veb-sayt mijozlarga mahsulotlar bilan tanishish, buyurtma berish va kompaniya haqida
-                            ma'lumot olish imkonini beradi.</p>
-                        <a href="https://www.bitiruvchilenta.uz" class="portfolio-button"
-                            data-key="portfolio-visit">Saytga o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            Biitiruvchi Lentalar</h3>
+                        <p data-key="portfolio6-description"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            Bitiruvchi Lentalar kompaniyasi uchun yaratilgan ushbu veb-sayt mijozlarga mahsulotlar bilan
+                            tanishish, buyurtma berish va kompaniya haqida ma'lumot olish imkonini beradi.
+                        </p>
+                        <a href="https://www.bitiruvchilenta.uz" class="portfolio-button" data-key="portfolio-visit"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-category="bot">
+                <div class="portfolio-item" data-category="bot" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="500">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/dustlikarena.jpg" alt="Do'stlik Arena Bot" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>Do'stlik Arena Bot</h3>
-                        <p data-key="portfolio7-description">Do'stlik Arena mini stadion boti orqali bugungi va ertangi
-                            o'yinlarni bron qilish, bekor qilish, stadion haqida ma'lumot olish, statistikani ko'rish
-                            mumkin va admin bilan bog'lanish imkoniyatini beradi.</p>
-                        <a href="https://t.me/DustlikArena_Bot" class="portfolio-button" data-key="portfolio-bot">Botga
-                            o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            Do'stlik Arena Bot</h3>
+                        <p data-key="portfolio7-description"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            Do'stlik Arena mini stadion boti orqali bugungi va ertangi o'yinlarni bron qilish, bekor
+                            qilish, stadion haqida ma'lumot olish, statistikani ko'rish mumkin va admin bilan bog'lanish
+                            imkoniyatini beradi.
+                        </p>
+                        <a href="https://t.me/DustlikArena_Bot" class="portfolio-button" data-key="portfolio-bot"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Botga o'tish
+                        </a>
                     </div>
                 </div>
 
-                <div class="portfolio-item" data-category="bot">
+                <div class="portfolio-item" data-category="bot" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="550">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/SodiqConsulting.jpg" alt="Sodiq Consalting" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>Sodiq Consulting</h3>
-                        <p data-key="portfolio8-description">Sodiq Consulting uchun yaratilgan sayt foydalanuvchilarga
-                            kompaniya haqidagi ma'lumotlar, ko'rsatiladigan xizmatlar, mijozlar uchun qo'llab-quvvatlash
-                            imkoniyatlari va sohadagi yangiliklarni taqdim etadi.</p>
-                        <a href="https://t.me/Koreadesk_bot" class="portfolio-button"
-                            data-key="portfolio-official-bot">Rasmiy Botga o'tish</a>
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            Sodiq Consulting</h3>
+                        <p data-key="portfolio8-description"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            Sodiq Consulting uchun yaratilgan sayt foydalanuvchilarga kompaniya haqidagi ma'lumotlar,
+                            ko'rsatiladigan xizmatlar, mijozlar uchun qo'llab-quvvatlash imkoniyatlari va sohadagi
+                            yangiliklarni taqdim etadi.
+                        </p>
+                        <a href="https://t.me/Koreadesk_bot" class="portfolio-button" data-key="portfolio-official-bot"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Rasmiy Botga o'tish
+                        </a>
                     </div>
                 </div>
             </div>
@@ -645,7 +807,6 @@
             });
         });
     </script>
-
     <section class="pricing max-w-7xl mx-auto px-4 py-20" id="pricing">
         <div class="grok-glow" style="top: 20%; left: 15%;"></div>
         <div class="container">
