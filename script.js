@@ -49,7 +49,7 @@ const translations = {
         "form-message": "Xabar",
         "form-submit": "Yuborish",
         "footer-copyright": "© 2025 Nurkom. Barcha huquqlar himoyalangan.",
-        "footer-text": "© 2025 Nurkom — Professional veb-saytlar va Telegram botlar yaratish xizmati.",
+        "footer-text": "© 2025 Nurkom — Barcha huquqlar himoyalangan.",
         "statistika":"Statistika",
          "pricing-title": "Narxlar",
   "pricing-subtitle": "Sizning ehtiyojlaringizga mos keladigan eng yaxshi tarifni tanlang",
