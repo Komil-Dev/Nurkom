@@ -470,34 +470,56 @@
         <div class="grok-glow" style="bottom: 20%; left: 15%;"></div>
         <div class="container">
             <h2 class="section-title gradient-text" data-key="portfolio-title">Portfolio</h2>
+
+            <!-- Category Filter Buttons -->
+            <div class="category-filter"
+                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px;">
+                <button class="category-btn active" data-category="all"
+                    style="padding: 10px 24px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                    Barchasi
+                </button>
+                <button class="category-btn" data-category="website"
+                    style="padding: 10px 24px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                    Veb-saytlar
+                </button>
+                <button class="category-btn" data-category="admin"
+                    style="padding: 10px 24px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                    Admin Panellar
+                </button>
+                <button class="category-btn" data-category="bot"
+                    style="padding: 10px 24px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">
+                    Telegram Botlar
+                </button>
+            </div>
+
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="admin">
                     <div class="portfolio-img">
-                        <img src="./images/portfolio/nurkom.jpg" alt="SkyFlow Technologies" />
+                        <img src="./images/portfolio/nurgarden.jpg" alt="studyfans" />
                     </div>
                     <div class="portfolio-content">
-                        <h3>Nurkom</h3>
-                        <p data-key="portfolio1-description">Nurkom kompaniyasi uchun yaratilgan ushbu veb-sayt
-                            mijozlarga kompaniya haqida to'liq ma'lumot olish hamda bajarilgan loyihalar portfoliosi
-                            orqali tajribani ko'rish imkonini beradi.</p>
-                        <a href="https://www.skyflowtechnologies.uz" class="portfolio-button"
-                            data-key="portfolio1-button">Siz allaqachon saytdasiz</a>
+                        <h3>Studyfans</h3>
+                        <p data-key="portfolio-description">Talabalarga konsalting xizmatlarini taqdim etuvchi
+                            platforma. Saytda o'quv dasturlari, xorijiy universitetlar va grant imkoniyatlari haqida
+                            to'liq ma'lumot beriladi.</p>
+                        <a href="https://studyfans.uz/" class="portfolio-button" data-key="portfolio-visit">Saytga
+                            o'tish</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="admin">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/studyfans.jpg" alt="studyfans" />
                     </div>
                     <div class="portfolio-content">
                         <h3>Studyfans</h3>
                         <p data-key="portfolio-description">Talabalarga konsalting xizmatlarini taqdim etuvchi
-                            platforma. Saytda o‘quv dasturlari, xorijiy universitetlar va grant imkoniyatlari haqida
-                            to‘liq ma’lumot beriladi.</p>
+                            platforma. Saytda o'quv dasturlari, xorijiy universitetlar va grant imkoniyatlari haqida
+                            to'liq ma'lumot beriladi.</p>
                         <a href="https://studyfans.uz/" class="portfolio-button" data-key="portfolio-visit">Saytga
                             o'tish</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="admin">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/muhibacademy.jpg" alt="muhibacademy" />
                     </div>
@@ -510,21 +532,21 @@
                             o'tish</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="admin">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/urgutplays.jpg" alt="urgutplays" />
                     </div>
                     <div class="portfolio-content">
                         <h3>Urgut Plays - admina panel</h3>
                         <p data-key="portfolio-description22">UrgutPlace platformasi uchun maxsus yaratilgan boshqaruv
-                            tizimi. Admin panel orqali do‘konlarni qo‘shish va o‘chirish, mahsulotlarni va
-                            kategoriyalarni boshqarish, foydalanuvchi so‘rovlari va buyurtmalarini nazorat qilish
+                            tizimi. Admin panel orqali do'konlarni qo'shish va o'chirish, mahsulotlarni va
+                            kategoriyalarni boshqarish, foydalanuvchi so'rovlari va buyurtmalarini nazorat qilish
                             imkoniyati yaratilgan</p>
                         <a href="#" class="portfolio-button" data-key="portfolio-visit">Saytga
                             o'tish</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="website">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/hmmexport.jpg" alt="HMM Export" />
                     </div>
@@ -537,7 +559,7 @@
                             o'tish</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="website">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/AZB.jpg" alt="AZB" />
                     </div>
@@ -550,20 +572,7 @@
                             data-key="portfolio-visit">Saytga o'tish</a>
                     </div>
                 </div>
-                <!-- <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/wedday.png" alt="Wedday.uz" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Wedday.uz</h3>
-                        <p data-key="portfolio4-description">Wedday ilovasi uchun yaratilgan sayt foydalanuvchilarga
-                            ilova haqidagi ma'lumotlar, xizmatlar, qo'llab-quvvatlash imkoniyatlari va yangiliklarni
-                            taqdim etadi.</p>
-                        <a href="https://www.wedday.uz" class="portfolio-button" data-key="portfolio-visit">Saytga
-                            o'tish</a>
-                    </div>
-                </div> -->
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="website">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/tca.jpg" alt="TCA Group" />
                     </div>
@@ -576,7 +585,7 @@
                             o'tish</a>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="website">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/lentalar.jpg" alt="Bitiruvchi lentalar" />
                     </div>
@@ -590,7 +599,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="bot">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/dustlikarena.jpg" alt="Do'stlik Arena Bot" />
                     </div>
@@ -604,7 +613,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-category="bot">
                     <div class="portfolio-img">
                         <img src="./images/portfolio/SodiqConsulting.jpg" alt="Sodiq Consalting" />
                     </div>
@@ -621,6 +630,54 @@
         </div>
     </section>
 
+    <style>
+        .category-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .category-btn:hover {
+            background-color: rgba(0, 255, 170, 0.2);
+        }
+
+        .category-btn.active {
+            background-color: #00FFAA;
+            color: #000;
+        }
+
+        .portfolio-item {
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item.hidden {
+            display: none;
+        }
+    </style>
+
+    <script>
+        // Category filter functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Filter portfolio items
+                portfolioItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
     <!-- About Section (Enhanc CSS) -->
     <section class="relative py-24 overflow-hidden container max-w-7xl mx-auto px-4" id="about">
         <!-- Enhanced glow elements -->
