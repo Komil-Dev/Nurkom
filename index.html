@@ -265,6 +265,102 @@
         </div>
     </section>
 
+
+
+    <!-- About Section (Apple Style with AOS) -->
+    <section class="relative py-32 overflow-hidden" id="about">
+        <!-- Subtle background gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-[rgba(0,255,170,0.01)] to-black"></div>
+
+        <div class="container max-w-6xl mx-auto px-6 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-24" data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-4xl md:text-5xl font-semibold mb-3 text-white tracking-tight" data-key="statistika">
+                    Statistika
+                </h2>
+                <p class="text-sm text-[rgba(255,255,255,0.5)] mt-2">Raqamlarda natijalarimiz</p>
+            </div>
+
+            <!-- Achievements Grid -->
+            <div class="relative">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                    <!-- Stat 1 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div class="relative inline-block mb-3">
+                            <div
+                                class="text-5xl md:text-6xl font-semibold text-[#00FFAA] transition-all duration-700 ease-out">
+                                10<span class="text-3xl">+</span>
+                            </div>
+                        </div>
+                        <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal" data-key="stat1">
+                            Muvaffaqiyatli Loyihalar
+                        </p>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="relative inline-block mb-3">
+                            <div
+                                class="text-5xl md:text-6xl font-semibold text-[#00FFAA] transition-all duration-700 ease-out">
+                                100<span class="text-3xl">%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal" data-key="stat2">
+                            Mijozlar Mamnuniyati
+                        </p>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <div class="relative inline-block mb-3">
+                            <div
+                                class="text-5xl md:text-6xl font-semibold text-[#00FFAA] transition-all duration-700 ease-out">
+                                3<span class="text-3xl">+</span>
+                            </div>
+                        </div>
+                        <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal" data-key="stat3">
+                            Tajribali Mutaxassislar
+                        </p>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        <div class="relative inline-block mb-3">
+                            <div
+                                class="text-5xl md:text-6xl font-semibold text-[#00FFAA] transition-all duration-700 ease-out">
+                                3
+                            </div>
+                        </div>
+                        <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal" data-key="stat4">
+                            Yillik Tajriba
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separator Line -->
+            <div class="mt-20" data-aos="fade-in" data-aos-duration="800" data-aos-delay="500">
+                <div class="w-full h-px bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.08)] to-transparent">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Add in <head> -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+
     <!-- Services Section -->
     <section class="services max-w-7xl mx-auto px-4" id="services">
         <div class="grok-glow" style="top: 30%; right: 10%;"></div>
