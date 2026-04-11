@@ -5,21 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nurkom</title>
-    <link rel="website icon" href="./images/logos/photo_2025-11-22_20-57-29.jpg" type="png" />
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <meta name="seobility" content="4d546b5734de5bf65a31753854e4d6ed">
+    <meta name="google-site-verification" content="ulcgv30r6utOEc2tqLB4BYX5BTppv4IYcrG9nSQ-x2U" />
+
+    <!-- Favicon -->
+    <link rel="website icon" href="./images/logos/photo_2025-11-22_20-57-29.jpg" type="png" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-yen6Id35pKUe2YHtHX4+3WZbfj3H+plT1/nqjJfAxvym+NkoFQyM6oU8vMHk2kDL2QhZGn+NrrK0XiS4dCkG4Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta name="google-site-verification" content="ulcgv30r6utOEc2tqLB4BYX5BTppv4IYcrG9nSQ-x2U" />
 
+    <!-- Scripts (head) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
 </head>
 
 <style>
@@ -115,6 +122,43 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+    }
+
+    /* Default state - hidden underline */
+    .nav-link .nav-underline {
+        transform: scaleX(0);
+    }
+
+    /* Active state - show underline */
+    .nav-link.active .nav-underline {
+        transform: scaleX(1);
+    }
+
+    /* Hover effect */
+    .nav-link:hover .nav-underline {
+        transform: scaleX(1);
+    }
+
+    .category-btn {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+
+    .category-btn:hover {
+        background-color: rgba(0, 255, 170, 0.2);
+    }
+
+    .category-btn.active {
+        background-color: #00FFAA;
+        color: #000;
+    }
+
+    .portfolio-item {
+        transition: all 0.3s ease;
+    }
+
+    .portfolio-item.hidden {
+        display: none;
     }
 </style>
 
@@ -234,64 +278,7 @@
         </div>
     </header>
 
-    <style>
-        /* Default state - hidden underline */
-        .nav-link .nav-underline {
-            transform: scaleX(0);
-        }
-
-        /* Active state - show underline */
-        .nav-link.active .nav-underline {
-            transform: scaleX(1);
-        }
-
-        /* Hover effect */
-        .nav-link:hover .nav-underline {
-            transform: scaleX(1);
-        }
-    </style>
-
-    <script>
-        // Active nav link on scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        function setActiveLink() {
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // Set active link on scroll
-        window.addEventListener('scroll', setActiveLink);
-
-        // Set active link on page load
-        window.addEventListener('load', setActiveLink);
-
-        // Set active link on click
-        navLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-    </script>
     <!-- Mobile Menu (initially hidden) -->
-
-
 
     <section class="relative sm:mt-10 mt-10 min-h-screen overflow-hidden bg-black flex items-center justify-center">
 
@@ -492,6 +479,7 @@
             </div>
         </div>
     </section>
+
     <section class="portfolio max-w-7xl mx-auto px-4 py-32" id="portfolio">
         <div class="grok-glow" style="bottom: 20%; left: 15%;"></div>
         <div class="container">
@@ -527,6 +515,26 @@
             </div>
 
             <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="150">
+                    <div class="portfolio-img">
+                        <img src="./images/portfolio/furniglass.jpg" alt="furniglass furniglass.uz" />
+                    </div>
+                    <div class="portfolio-content">
+                        <h3
+                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
+                            Furniglass</h3>
+                        <p data-key="portfolio-description"
+                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
+                            Talabalarga konsalting xizmatlarini taqdim etuvchi platforma. Saytda o'quv dasturlari,
+                            xorijiy universitetlar va grant imkoniyatlari haqida to'liq ma'lumot beriladi.
+                        </p>
+                        <a href="https://furniglass.uz/" class="portfolio-button" data-key="portfolio-visit"
+                            style="font-size: 0.875rem; font-weight: 500;">
+                            Saytga o'tish
+                        </a>
+                    </div>
+                </div>
                 <div class="portfolio-item" data-category="admin" data-aos="fade-up" data-aos-duration="800"
                     data-aos-delay="100">
                     <div class="portfolio-img">
@@ -747,54 +755,6 @@
         </div>
     </section>
 
-    <style>
-        .category-btn {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
-
-        .category-btn:hover {
-            background-color: rgba(0, 255, 170, 0.2);
-        }
-
-        .category-btn.active {
-            background-color: #00FFAA;
-            color: #000;
-        }
-
-        .portfolio-item {
-            transition: all 0.3s ease;
-        }
-
-        .portfolio-item.hidden {
-            display: none;
-        }
-    </style>
-
-    <script>
-        // Category filter functionality
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const category = btn.dataset.category;
-
-                // Update active button
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                // Filter portfolio items
-                portfolioItems.forEach(item => {
-                    if (category === 'all' || item.dataset.category === category) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
     <section class="pricing max-w-7xl mx-auto px-4 py-32" id="pricing">
         <div class="grok-glow" style="top: 20%; left: 15%;"></div>
         <div class="container">
@@ -1073,9 +1033,6 @@
             </div>
         </div>
     </section>
-    <!-- Portfolio  -->
-
-
 
     <!-- Contact Section-->
     <section class="contact bg-black text-white py-20 relative overflow-hidden max-w-7xl mx-auto px-4" id="contact">
@@ -1223,13 +1180,10 @@
     <div id="successModal"
         class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
         <div class="bg-black border border-[#00FFAA] p-8 max-w-md w-full mx-4 relative overflow-hidden">
-            <!-- Glow effect for modal -->
             <div
                 class="absolute w-32 h-32 rounded-full bg-[#00FFAA] blur-3xl opacity-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             </div>
-
             <div class="relative z-10 text-center">
-                <!-- Success Icon -->
                 <div class="mb-4 flex justify-center">
                     <div class="bg-[rgba(0,255,170,0.1)] p-4 rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
@@ -1238,10 +1192,8 @@
                         </svg>
                     </div>
                 </div>
-
                 <h3 class="text-2xl font-bold text-[#00FFAA] mb-2">Muvaffaqiyat!</h3>
                 <p class="text-gray-300 mb-6">Xabaringiz muvaffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz.</p>
-
                 <button id="closeModal"
                     class="px-6 py-2 bg-gradient-to-r from-[#00FFAA] to-[#00FFAA] text-black font-medium transition duration-300 hover:shadow-lg hover:shadow-[#00FFAA]/25">
                     OK
@@ -1250,17 +1202,14 @@
         </div>
     </div>
 
-    <!-- Er  -->
+    <!-- Error Modal -->
     <div id="errorModal"
         class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
         <div class="bg-black border border-red-500 p-8 max-w-md w-full mx-4 relative overflow-hidden">
-            <!-- Glow effect for modal -->
             <div
                 class="absolute w-32 h-32 rounded-full bg-red-500 blur-3xl opacity-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             </div>
-
             <div class="relative z-10 text-center">
-                <!-- Error Icon -->
                 <div class="mb-4 flex justify-center">
                     <div class="bg-[rgba(255,0,0,0.1)] p-4 rounded-full">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ef4444"
@@ -1270,10 +1219,8 @@
                         </svg>
                     </div>
                 </div>
-
                 <h3 class="text-2xl font-bold text-red-500 mb-2">Xatolik!</h3>
                 <p class="text-gray-300 mb-6">Xabar yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.</p>
-
                 <button id="closeErrorModal"
                     class="px-6 py-2 bg-gradient-to-r from-red-500 to-red-500 text-white font-medium transition duration-300 hover:shadow-lg hover:shadow-red-500/25">
                     OK
@@ -1281,12 +1228,89 @@
             </div>
         </div>
     </div>
-    <script src="./script.js"></script>
-    <script>
 
+    <footer class="bg-black py-6 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <p class="text-center text-gray-400 text-sm" data-key="footer-text">
+                © 2026 Nurkom — Barcha huquqlar himoyalangan
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== JS SCRIPTS (ENG PASTDA) ==================== -->
+
+    <!-- External JS Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Local JS -->
+    <script src="./script.js"></script>
+
+    <!-- AOS Init -->
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+
+    <!-- Active Nav Link on Scroll -->
+    <script>
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function setActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveLink);
+        window.addEventListener('load', setActiveLink);
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+    <!-- Portfolio Category Filter -->
+    <script>
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                portfolioItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Contact Form & Telegram Bot -->
+    <script>
         const BOT_TOKEN = '8081090929:AAHbcMpCn9Hs5PEFsUbNA6dhR5JRotkUiYM';
         const CHAT_ID = '7241567559';
-
 
         const contactForm = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
@@ -1295,11 +1319,8 @@
         const closeModal = document.getElementById('closeModal');
         const closeErrorModal = document.getElementById('closeErrorModal');
 
-
         async function sendToTelegram(message) {
             const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-
-
             const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
             const url = proxyUrl + telegramUrl;
 
@@ -1324,12 +1345,8 @@
                 }
 
                 const result = await response.json();
-                console.log('Telegram response:', result);
                 return result.ok;
             } catch (error) {
-                console.error('Error sending message to Telegram:', error);
-
-                // Fallback method using FormData and different approach
                 try {
                     const fallbackUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
                     const formData = new FormData();
@@ -1337,87 +1354,63 @@
                     formData.append('text', message);
                     formData.append('parse_mode', 'HTML');
 
-                    const fallbackResponse = await fetch(fallbackUrl, {
+                    await fetch(fallbackUrl, {
                         method: 'POST',
                         mode: 'no-cors',
                         body: formData
                     });
 
-                    // With no-cors, we can't read the response, so we assume success
                     return true;
                 } catch (fallbackError) {
-                    console.error('Fallback method also failed:', fallbackError);
                     return false;
                 }
             }
         }
 
-        // Format message for Telegram
         function formatMessage(formData) {
             const name = formData.get('name');
             const phone = formData.get('phone');
             const telegram = formData.get('telegram');
             const message = formData.get('message');
-
             const currentDate = new Date().toLocaleString('uz-UZ');
 
             let telegramMessage = `<b>🆕 Yangi xabar SkyFlow Technologies saytidan</b>\n\n`;
             telegramMessage += `<b>📅 Sana:</b> ${currentDate}\n`;
             telegramMessage += `<b>👤 Ism:</b> ${name}\n`;
             telegramMessage += `<b>📞 Telefon:</b> ${phone}\n`;
-
             if (telegram && telegram.trim() !== '') {
                 telegramMessage += `<b>📱 Telegram:</b> ${telegram}\n`;
             }
-
             if (message && message.trim() !== '') {
                 telegramMessage += `<b>💬 Xabar:</b>\n${message}`;
             }
-
             return telegramMessage;
         }
 
-        // Show loading state
         function showLoading() {
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="relative z-10">Yuborilmoqda...</span>';
         }
 
-        // Hide loading state
         function hideLoading() {
             submitBtn.disabled = false;
             submitBtn.innerHTML = '<span class="relative z-10">Yuborish</span>';
         }
 
-        // Show success modal
-        function showSuccessModal() {
-            successModal.classList.remove('hidden');
-        }
-
-        // Show error modal
-        function showErrorModal() {
-            errorModal.classList.remove('hidden');
-        }
-
-        // Hide modals
+        function showSuccessModal() { successModal.classList.remove('hidden'); }
+        function showErrorModal() { errorModal.classList.remove('hidden'); }
         function hideModals() {
             successModal.classList.add('hidden');
             errorModal.classList.add('hidden');
         }
 
-        // Form submit handler
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-
             showLoading();
-
             const formData = new FormData(contactForm);
             const message = formatMessage(formData);
-
             const success = await sendToTelegram(message);
-
             hideLoading();
-
             if (success) {
                 contactForm.reset();
                 showSuccessModal();
@@ -1426,50 +1419,19 @@
             }
         });
 
-        // Modal close handlers
         closeModal.addEventListener('click', hideModals);
         closeErrorModal.addEventListener('click', hideModals);
 
-        // Close modal when clicking outside
         successModal.addEventListener('click', (e) => {
-            if (e.target === successModal) {
-                hideModals();
-            }
+            if (e.target === successModal) hideModals();
         });
-
         errorModal.addEventListener('click', (e) => {
-            if (e.target === errorModal) {
-                hideModals();
-            }
+            if (e.target === errorModal) hideModals();
         });
-
-        // Close modal with Escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                hideModals();
-            }
+            if (e.key === 'Escape') hideModals();
         });
     </script>
-    <!-- Add in <head> -->
-
-
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out',
-            once: true,
-            offset: 100
-        });
-    </script>
-    <footer class="bg-black py-6 border-t border-gray-800">
-        <div class="container mx-auto px-4">
-            <p class="text-center text-gray-400 text-sm" data-key="footer-text">
-                © 2026 Nurkom — Barcha huquqlar himoyalangan
-            </p>
-        </div>
-    </footer>
 
 </body>
 
