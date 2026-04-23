@@ -25,6 +25,8 @@ const translations = {
     "portfolio-title": "Portfolio",
     "portfolio-description-nurgarden":
       "Oziq-ovqat mahsulotlarini ishlab chiqaruvchi kompaniya uchun yaratilgan minimalistik veb-sayt.NurGarden haqida batafsil ma'lumot olishingiz mumkin.",
+    "portfolio-description-furniglass":
+      "Furniglass mebellar fabrikasi 25 yillik tajribaga ega bo‘lib, zamonaviy va sifatli mahsulotlar ishlab chiqaradi. Saytda turli mebel turlari, dizayn yechimlari va buyurtma asosidagi xizmatlar haqida to‘liq ma’lumot beriladi.",
     "portfolio1-button": "Siz allaqachon saytdasiz",
     "portfolio-description":
       "Talabalarga konsalting xizmatlarini taqdim etuvchi platforma. Saytda o‘quv dasturlari, xorijiy universitetlar va grant imkoniyatlari haqida to‘liq ma’lumot beriladi.",
@@ -111,6 +113,8 @@ const translations = {
     "portfolio-title": "Portfolio",
     "portfolio-description-nurgarden":
       "A minimalist website created for a food production company. You can get detailed information about NurGarden.",
+    "portfolio-description-furniglass":
+      "Furniglass furniture factory, with 25 years of experience, produces modern and high-quality products. The website provides complete information about various types of furniture, design solutions, and custom-made services.",
     "portfolio1-button": "You are already on the site",
     "portfolio-description":
       "A platform providing consulting services to students. The website offers complete information about educational programs, foreign universities, and grant opportunities.",
@@ -197,6 +201,8 @@ const translations = {
     "portfolio-title": "Портфолио",
     "portfolio-description-nurgarden":
       "Минималистичный веб-сайт, созданный для компании по производству продуктов питания. Вы можете получить подробную информацию о NurGarden.",
+    "portfolio-description-furniglass":
+      "Мебельная фабрика Furniglass с 25-летним опытом производит современную и качественную продукцию. На сайте представлена полная информация о различных видах мебели, дизайнерских решениях и услугах по индивидуальному заказу.",
     "portfolio1-button": "Вы уже на сайте",
     "portfolio-description":
       "Платформа, предоставляющая консультационные услуги студентам. На сайте представлена полная информация об образовательных программах, зарубежных университетах и грантовых возможностях.",
