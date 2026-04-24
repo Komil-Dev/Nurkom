@@ -8,25 +8,20 @@
     <meta name="seobility" content="4d546b5734de5bf65a31753854e4d6ed">
     <meta name="google-site-verification" content="ulcgv30r6utOEc2tqLB4BYX5BTppv4IYcrG9nSQ-x2U" />
 
-    <!-- Favicon -->
-    <link rel=" icon" href="./images/logos/photo_2025-11-22_20-57-29.jpg" />
+    <link rel="icon" href="./images/logos/photo_2025-11-22_20-57-29.jpg" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
     <link rel="stylesheet" href="./style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-yen6Id35pKUe2YHtHX4+3WZbfj3H+plT1/nqjJfAxvym+NkoFQyM6oU8vMHk2kDL2QhZGn+NrrK0XiS4dCkG4Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Scripts (head) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/heroicons@1.0.6/solid/phone-icon.js"></script>
 </head>
 
 <style>
@@ -46,15 +41,11 @@
 
         0%,
         100% {
-            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3),
-                0 0 40px rgba(34, 197, 94, 0.2),
-                0 0 60px rgba(34, 197, 94, 0.1);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3), 0 0 40px rgba(34, 197, 94, 0.2), 0 0 60px rgba(34, 197, 94, 0.1);
         }
 
         50% {
-            box-shadow: 0 0 30px rgba(34, 197, 94, 0.5),
-                0 0 60px rgba(34, 197, 94, 0.3),
-                0 0 90px rgba(34, 197, 94, 0.2);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.5), 0 0 60px rgba(34, 197, 94, 0.3), 0 0 90px rgba(34, 197, 94, 0.2);
         }
     }
 
@@ -80,25 +71,19 @@
         }
     }
 
-    .grid-pattern {
-        background-image:
-            linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
-        background-size: 40px 40px;
-        animation: grid-move 4s linear infinite;
+    @keyframes modalIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95) translateY(12px);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
     }
 
-    .floating-square {
-        animation: float 6s ease-in-out infinite;
-    }
 
-    .floating-square:nth-child(2) {
-        animation-delay: -2s;
-    }
-
-    .floating-square:nth-child(3) {
-        animation-delay: -4s;
-    }
 
     .glow-effect {
         animation: pulse-glow 3s ease-in-out infinite;
@@ -117,24 +102,14 @@
         animation-delay: 0.4s;
     }
 
-    .gradient-text {
-        background: #00ffaa;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    /* Default state - hidden underline */
     .nav-link .nav-underline {
         transform: scaleX(0);
     }
 
-    /* Active state - show underline */
     .nav-link.active .nav-underline {
         transform: scaleX(1);
     }
 
-    /* Hover effect */
     .nav-link:hover .nav-underline {
         transform: scaleX(1);
     }
@@ -154,122 +129,145 @@
     }
 
     .portfolio-item {
+        cursor: pointer;
         transition: all 0.3s ease;
     }
 
     .portfolio-item.hidden {
         display: none;
     }
+
+    .portfolio-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 255, 170, 0.08);
+    }
+
+    /* Modal */
+    .modal-box {
+        animation: modalIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .order-input {
+        width: 100%;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #fff;
+        font-size: 0.8125rem;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+
+    .order-input:focus {
+        border-color: #00FFAA;
+    }
+
+    .order-input::placeholder {
+        color: rgba(255, 255, 255, 0.3);
+    }
+
+    .modal-scroll::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .modal-scroll::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .modal-scroll::-webkit-scrollbar-thumb {
+        background: rgba(0, 255, 170, 0.3);
+        border-radius: 2px;
+    }
 </style>
 
 <body>
-    <!-- Header -->
-    <header class="bg-none text-white  fixed w-full top-0 z-50">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="bg-none text-white fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
-                <!-- Logo and Main Navigation Together -->
                 <div class="flex items-center">
                     <!-- Logo -->
                     <div class="flex-shrink-0 flex items-center mr-8" data-aos="fade-down" data-aos-duration="800">
-                        <a href="#" class="group">
+                        <a href="#">
                             <div class="bg-[#00ffaa] text-white px-1.5 py-1 font-semibold text-lg"
-                                style="letter-spacing: -0.01em;">
-                                NURKOM
-                            </div>
+                                style="letter-spacing:-0.01em;">NURKOM</div>
                         </a>
                     </div>
-
-                    <!-- Main Desktop Menu -->
+                    <!-- Desktop nav -->
                     <div class="hidden md:flex items-center space-x-8">
                         <a href="#home"
-                            class="nav-link active text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
+                            class="nav-link active text-white px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
                             data-key="nav-home" data-aos="fade-down" data-aos-duration="800" data-aos-delay="100"
-                            style="letter-spacing: 0.05em;">
-                            Asosiy
-                            <span
+                            style="letter-spacing:0.05em;">
+                            Asosiy<span
                                 class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-[#00ffaa] transform transition-transform duration-300"></span>
                         </a>
                         <a href="#services"
-                            class="nav-link text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
+                            class="nav-link text-white px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
                             data-key="nav-services" data-aos="fade-down" data-aos-duration="800" data-aos-delay="150"
-                            style="letter-spacing: 0.05em;">
-                            Xizmatlar
-                            <span
+                            style="letter-spacing:0.05em;">
+                            Xizmatlar<span
                                 class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-[#00ffaa] transform transition-transform duration-300"></span>
                         </a>
                         <a href="#about"
-                            class="nav-link text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
+                            class="nav-link text-white px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
                             data-key="nav-about" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200"
-                            style="letter-spacing: 0.05em;">
-                            Statistika
-                            <span
+                            style="letter-spacing:0.05em;">
+                            Statistika<span
                                 class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-[#00ffaa] transform transition-transform duration-300"></span>
                         </a>
                         <a href="#portfolio"
-                            class="nav-link text-white hover-accent px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
+                            class="nav-link text-white px-2 py-1 font-medium transition-all duration-300 text-xs uppercase tracking-wider relative"
                             data-key="nav-portfolio" data-aos="fade-down" data-aos-duration="800" data-aos-delay="250"
-                            style="letter-spacing: 0.05em;">
-                            Portfolio
-                            <span
+                            style="letter-spacing:0.05em;">
+                            Portfolio<span
                                 class="nav-underline absolute bottom-0 left-0 w-full h-0.5 bg-[#00ffaa] transform transition-transform duration-300"></span>
                         </a>
                     </div>
                 </div>
-
-                <!-- Language Switcher and Contact Link (right-aligned) -->
+                <!-- Right side -->
                 <div class="hidden md:flex items-center space-x-4">
-                    <!-- Language Switcher -->
                     <div class="language-switcher" data-aos="fade-down" data-aos-duration="800" data-aos-delay="300">
                         <div id="language-btn" class="flex items-center space-x-2 px-3 py-2 text-white cursor-pointer">
                             <div class="language-flag flag-uz" id="current-flag"></div>
                             <span id="current-lang" class="text-xs font-medium">UZ</span>
                             <i class="fas fa-chevron-down text-xs"></i>
                         </div>
-
                         <div id="language-dropdown" class="language-dropdown">
                             <a href="#" class="language-option" data-lang="uz">
-                                <div class="language-flag flag-uz"></div>
-                                <span class="text-sm">O'zbekcha</span>
+                                <div class="language-flag flag-uz"></div><span class="text-sm">O'zbekcha</span>
                             </a>
                             <a href="#" class="language-option" data-lang="en">
-                                <div class="language-flag flag-en"></div>
-                                <span class="text-sm">English</span>
+                                <div class="language-flag flag-en"></div><span class="text-sm">English</span>
                             </a>
                             <a href="#" class="language-option" data-lang="ru">
-                                <div class="language-flag flag-ru"></div>
-                                <span class="text-sm">Русский</span>
+                                <div class="language-flag flag-ru"></div><span class="text-sm">Русский</span>
                             </a>
                         </div>
                     </div>
-
-                    <a href="#contact"
+                    <a onclick="openOrderModal('order-service-website')"
                         class="accent-color px-5 py-2 font-medium transition-all duration-300 border accent-border text-xs uppercase tracking-wider hover:bg-opacity-10 hover:bg-gray-800"
                         data-key="nav-contact" data-aos="fade-down" data-aos-duration="800" data-aos-delay="350"
-                        style="letter-spacing: 0.05em;">Bog'lanish</a>
+                        style="letter-spacing:0.05em;">Bog'lanish</a>
                 </div>
-
-                <!-- Mobile menu button -->
+                <!-- Mobile lang -->
                 <div class="md:hidden flex items-center space-x-4">
-                    <!-- Mobile Language Switcher -->
                     <div class="language-switcher">
                         <div id="mobile-language-btn"
                             class="flex items-center space-x-1 px-2 py-1 text-white transition-colors">
                             <div class="language-flag flag-uz w-4 h-3" id="mobile-current-flag"></div>
                             <span id="mobile-current-lang" class="text-xs font-medium">UZ</span>
                         </div>
-
                         <div id="mobile-language-dropdown" class="language-dropdown">
                             <a href="#" class="language-option mobile-lang-option" data-lang="uz">
-                                <div class="language-flag flag-uz"></div>
-                                <span class="text-sm">O'zbekcha</span>
+                                <div class="language-flag flag-uz"></div><span class="text-sm">O'zbekcha</span>
                             </a>
                             <a href="#" class="language-option mobile-lang-option" data-lang="en">
-                                <div class="language-flag flag-en"></div>
-                                <span class="text-sm">English</span>
+                                <div class="language-flag flag-en"></div><span class="text-sm">English</span>
                             </a>
                             <a href="#" class="language-option mobile-lang-option" data-lang="ru">
-                                <div class="language-flag flag-ru"></div>
-                                <span class="text-sm">Русский</span>
+                                <div class="language-flag flag-ru"></div><span class="text-sm">Русский</span>
                             </a>
                         </div>
                     </div>
@@ -278,37 +276,31 @@
         </div>
     </header>
 
-    <!-- Mobile Menu (initially hidden) -->
-
-    <section class="relative sm:mt-10 mt-10 min-h-screen overflow-hidden bg-black flex items-center justify-center">
-
-        <!-- Hero Content -->
+    <!-- ═══ HERO ═══ -->
+    <section id="home"
+        class="relative sm:mt-10 mt-10 min-h-screen overflow-hidden bg-black flex items-center justify-center">
         <div class="relative z-10 container mx-auto px-6 text-center">
             <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-semibold mb-8" style="letter-spacing: -0.02em;" data-aos="fade-up"
+                <h1 class="text-4xl md:text-6xl font-semibold mb-8" style="letter-spacing:-0.02em;" data-aos="fade-up"
                     data-aos-duration="800">
                     <div data-key="hero-modern" class="text-white mb-4">Zamonaviy</div>
                     <div data-key="hero-digital" class="text-[#00ffaa]">Raqamli Yechimlar</div>
                 </h1>
-
-                <p class="text-sm md:text-lg text-green-100 mb-12 max-w-3xl mx-auto leading-relaxed"
-                    style="color: rgba(255,255,255,0.6); font-weight: 400;" data-key="hero-description"
-                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <p class="text-sm md:text-lg mb-12 max-w-3xl mx-auto leading-relaxed"
+                    style="color:rgba(255,255,255,0.6);font-weight:400;" data-key="hero-description" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="100">
                     Professional veb-saytlar va Telegram botlar yaratish xizmati. Sizning biznesingiz uchun mukammal
                     raqamli yechimlarga tayyormiz.
                 </p>
-
                 <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <a href="#contact"
                         class="inline-block px-8 py-[13px] bg-[#00ffaa] text-black text-base font-medium border-2 border-[#00ffaa] transition-all glow-effect"
-                        data-key="hero-cta" style="letter-spacing: -0.01em;">
+                        data-key="hero-cta" style="letter-spacing:-0.01em;">
                         Biz bilan bog'laning
                     </a>
                 </div>
             </div>
         </div>
-
-        <!-- Additional Square Line Patterns -->
         <div class="absolute inset-0 pointer-events-none">
             <div
                 class="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-30">
@@ -325,80 +317,41 @@
         </div>
     </section>
 
-
-
-    <!-- About Section (Apple Style with AOS) -->
+    <!-- ═══ STATISTICS ═══ -->
     <section class="relative py-32 overflow-hidden" id="about">
-        <!-- Subtle background gradient -->
         <div class="absolute inset-0 bg-gradient-to-b from-black via-[rgba(0,255,170,0.01)] to-black"></div>
-
         <div class="container max-w-6xl mx-auto px-6 relative z-10">
-            <!-- Section Header -->
             <div class="text-center mb-24" data-aos="fade-up" data-aos-duration="800">
                 <h2 class="text-4xl md:text-5xl font-semibold mb-3 text-white tracking-tight" data-key="statistika">
-                    Statistika
-                </h2>
-                <p class="text-sm text-[rgba(255,255,255,0.5)] mt-2">Raqamlarda natijalarimiz</p>
+                    Statistika</h2>
+                <p class="text-sm text-[rgba(255,255,255,0.5)] mt-2" data-key="stats-subtitle">Raqamlarda natijalarimiz
+                </p>
             </div>
-
-            <!-- Achievements Grid -->
-            <div class="relative">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-                    <!-- Stat 1 -->
-                    <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                        <div class="relative inline-block mb-3">
-                            <div
-                                class="text-5xl md:text-6xl font-semibold text-[#00FFAA] transition-all duration-700 ease-out">
-                                20<span class="text-3xl">+</span>
-                            </div>
-                        </div>
-                        <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal" data-key="stat1">
-                            Muvaffaqiyatli Loyihalar
-                        </p>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="text-5xl md:text-6xl font-semibold text-[#00FFAA]">20<span class="text-3xl">+</span>
                     </div>
-
-                    <!-- Stat 2 -->
-                    <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                        <div class="relative inline-block mb-3">
-                            <div
-                                class="text-5xl md:text-6xl font-semibold text-[#00FFAA] transition-all duration-700 ease-out">
-                                100<span class="text-3xl">%</span>
-                            </div>
-                        </div>
-                        <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal" data-key="stat2">
-                            Mijozlar Mamnuniyati
-                        </p>
+                    <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal mt-3" data-key="stat1">
+                        Muvaffaqiyatli Loyihalar</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="text-5xl md:text-6xl font-semibold text-[#00FFAA]">100<span class="text-3xl">%</span>
                     </div>
-
-                    <!-- Stat 3 -->
-                    <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                        <div class="relative inline-block mb-3">
-                            <div
-                                class="text-5xl md:text-6xl font-semibold text-[#00FFAA] transition-all duration-700 ease-out">
-                                3<span class="text-3xl">+</span>
-                            </div>
-                        </div>
-                        <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal" data-key="stat3">
-                            Tajribali Mutaxassislar
-                        </p>
+                    <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal mt-3" data-key="stat2">
+                        Mijozlar Mamnuniyati</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="text-5xl md:text-6xl font-semibold text-[#00FFAA]">3<span class="text-3xl">+</span>
                     </div>
-
-                    <!-- Stat 4 -->
-                    <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                        <div class="relative inline-block mb-3">
-                            <div
-                                class="text-5xl md:text-6xl font-semibold text-[#00FFAA] transition-all duration-700 ease-out">
-                                3
-                            </div>
-                        </div>
-                        <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal" data-key="stat4">
-                            Yillik Tajriba
-                        </p>
-                    </div>
+                    <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal mt-3" data-key="stat3">
+                        Tajribali Mutaxassislar</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="text-5xl md:text-6xl font-semibold text-[#00FFAA]">3</div>
+                    <p class="text-xs md:text-sm text-[rgba(255,255,255,0.6)] font-normal mt-3" data-key="stat4">Yillik
+                        Tajriba</p>
                 </div>
             </div>
-
-            <!-- Separator Line -->
             <div class="mt-20" data-aos="fade-in" data-aos-duration="800" data-aos-delay="500">
                 <div class="w-full h-px bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.08)] to-transparent">
                 </div>
@@ -406,20 +359,15 @@
         </div>
     </section>
 
-
-
-
-    <!-- Services Section -->
+    <!-- ═══ SERVICES ═══ -->
     <section class="services max-w-7xl mx-auto px-4" id="services">
-        <div class="grok-glow" style="top: 30%; right: 10%;"></div>
         <div class="container">
             <div class="text-center mb-24" data-aos="fade-up" data-aos-duration="800">
                 <h2 class="text-4xl md:text-5xl font-semibold mb-3 text-white tracking-tight" data-key="services-title">
-                    Xizmatlar
-                </h2>
-
+                    Xizmatlar</h2>
             </div>
             <div class="services-grid">
+                <!-- Service 1 -->
                 <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -429,16 +377,17 @@
                         </svg>
                     </div>
                     <h3 data-key="service1-title"
-                        style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                        Veb-sayt Yaratish</h3>
+                        style="font-size:1.25rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:0.75rem;">Veb-sayt
+                        Yaratish</h3>
                     <p data-key="service1-description"
-                        style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                        Zamonaviy va funktsional veb-saytlar yaratish xizmati.
-                        Bizneslarga mos keladigan yechimlar.</p>
-                    <a href="#contact" class="portfolio-button" data-key="service-order"
-                        style="font-size: 0.875rem; font-weight: 500;">Buyurtma berish</a>
+                        style="font-size:0.875rem;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:1.5rem;">
+                        Zamonaviy va funktsional veb-saytlar yaratish xizmati. Bizneslarga mos keladigan yechimlar.</p>
+                    <button onclick="openOrderModal('order-service-website')" class="portfolio-button"
+                        data-key="service-order"
+                        style="font-size:0.875rem;font-weight:500;cursor:pointer;background:none;border:none;">Buyurtma
+                        berish</button>
                 </div>
-
+                <!-- Service 2 -->
                 <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -448,16 +397,18 @@
                         </svg>
                     </div>
                     <h3 data-key="service2-title"
-                        style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                        Telegram Bot Yaratish</h3>
+                        style="font-size:1.25rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:0.75rem;">Telegram
+                        Bot Yaratish</h3>
                     <p data-key="service2-description"
-                        style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                        Biznesingiz uchun maxsus Telegram botlar yaratish. Mijozlar bilan
-                        muloqot va xizmatlarni avtomatlashtirish.</p>
-                    <a href="#contact" class="portfolio-button" data-key="service-order"
-                        style="font-size: 0.875rem; font-weight: 500;">Buyurtma berish</a>
+                        style="font-size:0.875rem;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:1.5rem;">
+                        Biznesingiz uchun maxsus Telegram botlar yaratish. Mijozlar bilan muloqot va xizmatlarni
+                        avtomatlashtirish.</p>
+                    <button onclick="openOrderModal('order-service-bot')" class="portfolio-button"
+                        data-key="service-order"
+                        style="font-size:0.875rem;font-weight:500;cursor:pointer;background:none;border:none;">Buyurtma
+                        berish</button>
                 </div>
-
+                <!-- Service 3 -->
                 <div class="service-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -467,316 +418,67 @@
                         </svg>
                     </div>
                     <h3 data-key="service3-title"
-                        style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                        Backend Ishlab Chiqish</h3>
+                        style="font-size:1.25rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:0.75rem;">Backend
+                        Ishlab Chiqish</h3>
                     <p data-key="service3-description"
-                        style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                        Loyihangiz uchun kuchli va barqaror backend tizimlar yaratish.
-                        Ma'lumotlar bazasi va API integratsiyasi.</p>
-                    <a href="#contact" class="portfolio-button" data-key="service-order"
-                        style="font-size: 0.875rem; font-weight: 500;">Buyurtma berish</a>
+                        style="font-size:0.875rem;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:1.5rem;">
+                        Loyihangiz uchun kuchli va barqaror backend tizimlar yaratish. Ma'lumotlar bazasi va API
+                        integratsiyasi.</p>
+                    <button onclick="openOrderModal('order-service-backend')" class="portfolio-button"
+                        data-key="service-order"
+                        style="font-size:0.875rem;font-weight:500;cursor:pointer;background:none;border:none;">Buyurtma
+                        berish</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ═══ PORTFOLIO ═══ -->
     <section class="portfolio max-w-7xl mx-auto px-4 py-32" id="portfolio">
-        <div class="grok-glow" style="bottom: 20%; left: 15%;"></div>
         <div class="container">
             <h2 class="text-4xl md:text-5xl font-semibold mb-3 text-white tracking-tight text-center"
-                data-key="portfolio-title" data-aos="fade-up" data-aos-duration="800" style="letter-spacing: -0.02em;">
-                Portfolio
-            </h2>
-            <p class="text-sm text-[rgba(255,255,255,0.5)] text-center mb-16" data-aos="fade-up" data-aos-duration="800"
-                data-aos-delay="100">
-                Bizning bajarilgan loyihalarimiz
-            </p>
+                data-key="portfolio-title" data-aos="fade-up" data-aos-duration="800" style="letter-spacing:-0.02em;">
+                Portfolio</h2>
+            <p class="text-sm text-[rgba(255,255,255,0.5)] text-center mb-16" data-key="portfolio-subtitle"
+                data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Bizning bajarilgan loyihalarimiz</p>
 
-            <!-- Category Filter Buttons -->
+            <!-- Category Filter -->
             <div class="category-filter"
-                style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 40px;"
+                style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:40px;"
                 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                <button class="category-btn active" data-category="all"
-                    style="padding: 8px 20px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; letter-spacing: -0.01em;">
-                    Barchasi
-                </button>
-                <button class="category-btn" data-category="website"
-                    style="padding: 8px 20px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; letter-spacing: -0.01em;">
-                    Veb-saytlar
-                </button>
-                <button class="category-btn" data-category="admin"
-                    style="padding: 8px 20px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; letter-spacing: -0.01em;">
-                    Admin Panellar
-                </button>
-                <button class="category-btn" data-category="bot"
-                    style="padding: 8px 20px; border-radius: 25px; border: none; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; letter-spacing: -0.01em;">
-                    Telegram Botlar
-                </button>
+                <button class="category-btn active" data-category="all" data-key="portfolio-filter-all"
+                    style="padding:8px 20px;border-radius:25px;border:none;font-weight:500;cursor:pointer;transition:all 0.3s ease;font-size:0.875rem;">Barchasi</button>
+                <button class="category-btn" data-category="website" data-key="portfolio-filter-website"
+                    style="padding:8px 20px;border-radius:25px;border:none;font-weight:500;cursor:pointer;transition:all 0.3s ease;font-size:0.875rem;">Veb-saytlar</button>
+                <button class="category-btn" data-category="admin" data-key="portfolio-filter-admin"
+                    style="padding:8px 20px;border-radius:25px;border:none;font-weight:500;cursor:pointer;transition:all 0.3s ease;font-size:0.875rem;">Admin
+                    Panellar</button>
+                <button class="category-btn" data-category="bot" data-key="portfolio-filter-bot"
+                    style="padding:8px 20px;border-radius:25px;border:none;font-weight:500;cursor:pointer;transition:all 0.3s ease;font-size:0.875rem;">Telegram
+                    Botlar</button>
             </div>
 
-            <div class="portfolio-grid">
-                <div class="portfolio-item" data-category="admin" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="150">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/furniglass.jpg" alt="furniglass furniglass.uz" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            Furniglass</h3>
-                        <p data-key="portfolio-description-furniglass"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            Furniglass mebellar fabrikasi 25 yillik tajribaga ega bo‘lib, zamonaviy va sifatli
-                            mahsulotlar ishlab chiqaradi. Saytda turli mebel turlari, dizayn yechimlari va buyurtma
-                            asosidagi xizmatlar haqida to‘liq ma’lumot beriladi.
-                        </p>
-                        <a href="https://furniglass.uz/" class="portfolio-button" data-key="portfolio-visit"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-                <div class="portfolio-item" data-category="admin" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="100">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/nurgarden.jpg" alt="nurgarden" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            Nur & Garden</h3>
-                        <p data-key="portfolio-description-nurgarden"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            Oziq-ovqat mahsulotlarini ishlab chiqaruvchi kompaniya uchun yaratilgan minimalistik
-                            veb-sayt. Saytda kompaniya haqida to'liq ma'lumot, ishlab chiqarilayotgan mahsulotlar, aloqa
-                            ma'lumotlari va hamkorlik imkoniyatlari keltirilgan.
-                        </p>
-                        <a href="https://www.nurandgarden.com/" class="portfolio-button" data-key="portfolio-visit"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="150">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/studyfans.jpg" alt="studyfans" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            Studyfans</h3>
-                        <p data-key="portfolio-description"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            Talabalarga konsalting xizmatlarini taqdim etuvchi platforma. Saytda o'quv dasturlari,
-                            xorijiy universitetlar va grant imkoniyatlari haqida to'liq ma'lumot beriladi.
-                        </p>
-                        <a href="https://studyfans.uz/" class="portfolio-button" data-key="portfolio-visit"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="200">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/muhibacademy.jpg" alt="muhibacademy" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            Muhibacademy</h3>
-                        <p data-key="portfolio-description2"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            Akademiya haqida ma'lumot beruvchi platforma. Mavjud kurslar karta ko'rinishida taqdim
-                            etiladi, har birida to'liq ma'lumot mavjud.
-                        </p>
-                        <a href="https://muhibacademy.uz/" class="portfolio-button" data-key="portfolio-visit"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="admin" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="250">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/urgutplays.jpg" alt="urgutplays" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            Urgut Plays - admina panel</h3>
-                        <p data-key="portfolio-description22"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            UrgutPlace platformasi uchun maxsus yaratilgan boshqaruv tizimi. Admin panel orqali
-                            do'konlarni qo'shish va o'chirish, mahsulotlarni va kategoriyalarni boshqarish,
-                            foydalanuvchi so'rovlari va buyurtmalarini nazorat qilish imkoniyati yaratilgan
-                        </p>
-                        <a href="#" class="portfolio-button" data-key="portfolio-visit"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="300">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/hmmexport.jpg" alt="HMM Export" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            HMM Export</h3>
-                        <p data-key="portfolio2-description"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            HMM Export kompaniyasi uchun yaratilgan ushbu veb-sayt mijozlarga mahsulotlar bilan
-                            tanishish, buyurtma berish, kompaniya haqida ma'lumot olish va yangiliklaridan xabardor
-                            bo'lish imkonini beradi.
-                        </p>
-                        <a href="https://www.hmmexport.com" class="portfolio-button" data-key="portfolio-visit"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="350">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/AZB.jpg" alt="AZB" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            AZB company</h3>
-                        <p data-key="portfolio3-description"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            Abdushukur Zamin Baraka firmasi uchun yaratilgan sayt foydalanuvchilarga quruq mevalar
-                            haqidagi ma'lumotlar, xizmatlar, qo'llab-quvvatlash imkoniyatlari va yangiliklarni taqdim
-                            etadi.
-                        </p>
-                        <a href="https://www.abdushkurzaminbaraka710.uz/" class="portfolio-button"
-                            data-key="portfolio-visit" style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="400">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/tca.jpg" alt="TCA Group" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            TCA Group</h3>
-                        <p data-key="portfolio5-description"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            TCA Group kompaniyasi uchun yaratilgan ushbu veb-sayt kompaniya haqida batafsil ma'lumot
-                            olish, ishlab chiqarilgan ilovalar portfelini ko'rish va bog'lanish imkoniyatlarini taqdim
-                            etadi.
-                        </p>
-                        <a href="https://www.tcagroup.uz" class="portfolio-button" data-key="portfolio-visit"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="website" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="450">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/lentalar.jpg" alt="Bitiruvchi lentalar" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            Biitiruvchi Lentalar</h3>
-                        <p data-key="portfolio6-description"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            Bitiruvchi Lentalar kompaniyasi uchun yaratilgan ushbu veb-sayt mijozlarga mahsulotlar bilan
-                            tanishish, buyurtma berish va kompaniya haqida ma'lumot olish imkonini beradi.
-                        </p>
-                        <a href="https://www.bitiruvchilenta.uz" class="portfolio-button" data-key="portfolio-visit"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Saytga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="bot" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="500">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/dustlikarena.jpg" alt="Do'stlik Arena Bot" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            Do'stlik Arena Bot</h3>
-                        <p data-key="portfolio7-description"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            Do'stlik Arena mini stadion boti orqali bugungi va ertangi o'yinlarni bron qilish, bekor
-                            qilish, stadion haqida ma'lumot olish, statistikani ko'rish mumkin va admin bilan bog'lanish
-                            imkoniyatini beradi.
-                        </p>
-                        <a href="https://t.me/DustlikArena_Bot" class="portfolio-button" data-key="portfolio-bot"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Botga o'tish
-                        </a>
-                    </div>
-                </div>
-
-                <div class="portfolio-item" data-category="bot" data-aos="fade-up" data-aos-duration="800"
-                    data-aos-delay="550">
-                    <div class="portfolio-img">
-                        <img src="./images/portfolio/SodiqConsulting.jpg" alt="Sodiq Consalting" />
-                    </div>
-                    <div class="portfolio-content">
-                        <h3
-                            style="font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.75rem;">
-                            Sodiq Consulting</h3>
-                        <p data-key="portfolio8-description"
-                            style="font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">
-                            Sodiq Consulting uchun yaratilgan sayt foydalanuvchilarga kompaniya haqidagi ma'lumotlar,
-                            ko'rsatiladigan xizmatlar, mijozlar uchun qo'llab-quvvatlash imkoniyatlari va sohadagi
-                            yangiliklarni taqdim etadi.
-                        </p>
-                        <a href="https://t.me/Koreadesk_bot" class="portfolio-button" data-key="portfolio-official-bot"
-                            style="font-size: 0.875rem; font-weight: 500;">
-                            Rasmiy Botga o'tish
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <!-- Cards injected by JS -->
+            <div class="portfolio-grid" id="portfolioGrid"></div>
         </div>
     </section>
 
+    <!-- ═══ PRICING ═══ -->
     <section class="pricing max-w-7xl mx-auto px-4 py-32" id="pricing">
-        <div class="grok-glow" style="top: 20%; left: 15%;"></div>
         <div class="container">
             <h2 class="text-4xl md:text-5xl font-semibold mb-3 text-white tracking-tight text-center"
-                data-key="pricing-title" data-aos="fade-up" data-aos-duration="800" style="letter-spacing: -0.02em;">
-                Narxlar
-            </h2>
+                data-key="pricing-title" data-aos="fade-up" data-aos-duration="800" style="letter-spacing:-0.02em;">
+                Narxlar</h2>
             <p class="text-center text-sm text-[rgba(255,255,255,0.5)] mb-20 max-w-2xl mx-auto"
-                data-key="pricing-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                Sizning ehtiyojlaringizga mos keladigan eng yaxshi tarifni tanlang
-            </p>
+                data-key="pricing-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Sizning
+                ehtiyojlaringizga mos keladigan eng yaxshi tarifni tanlang</p>
 
             <div class="grid md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-                <!-- Plan 1: Basic -->
+                <!-- Basic -->
                 <div class="relative bg-[rgba(255,255,255,0.02)] backdrop-blur-sm p-6 border border-[rgba(255,255,255,0.08)] transition-all duration-500 hover:border-[rgba(0,255,170,0.3)]"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                     <div class="absolute top-4 right-4 bg-[rgba(255,255,255,0.05)] text-[rgba(255,255,255,0.7)] px-2.5 py-1 text-xs font-medium border border-[rgba(255,255,255,0.1)]"
-                        data-key="badge-basic" style="letter-spacing: 0.02em;">
-                        BASIC
-                    </div>
-
+                        data-key="badge-basic" style="letter-spacing:0.02em;">BASIC</div>
                     <div class="mt-2 mb-6">
                         <div class="w-10 h-10 bg-[rgba(255,255,255,0.05)] flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -786,85 +488,75 @@
                             </svg>
                         </div>
                         <h3 class="text-lg font-semibold mb-2 text-white" data-key="plan-basic-title"
-                            style="letter-spacing: -0.01em;">Landing Page</h3>
+                            style="letter-spacing:-0.01em;">Landing Page</h3>
                         <div class="flex items-baseline gap-1.5 mt-4">
                             <span class="text-3xl font-semibold text-white"
-                                style="letter-spacing: -0.02em;">500,000</span>
+                                style="letter-spacing:-0.02em;">500,000</span>
                             <span class="text-xs text-[rgba(255,255,255,0.5)] font-medium">UZS</span>
                         </div>
                     </div>
-
                     <div class="space-y-2.5 mb-6 pt-4 border-t border-[rgba(255,255,255,0.06)]">
                         <div class="flex items-start gap-2.5">
                             <div
                                 class="w-4 h-4 bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-2.5 h-2.5 text-[rgba(255,255,255,0.7)]" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="rgba(255,255,255,0.7)" viewBox="0 0 24 24"
+                                    stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan-basic-feature1">1 sahifali veb-sayt</span>
                         </div>
                         <div class="flex items-start gap-2.5">
                             <div
                                 class="w-4 h-4 bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-2.5 h-2.5 text-[rgba(255,255,255,0.7)]" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="rgba(255,255,255,0.7)" viewBox="0 0 24 24"
+                                    stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan-basic-feature2">Responsive dizayn</span>
                         </div>
                         <div class="flex items-start gap-2.5">
                             <div
                                 class="w-4 h-4 bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-2.5 h-2.5 text-[rgba(255,255,255,0.7)]" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="rgba(255,255,255,0.7)" viewBox="0 0 24 24"
+                                    stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan-basic-feature3">Aloqa formasi</span>
                         </div>
                         <div class="flex items-start gap-2.5">
                             <div
                                 class="w-4 h-4 bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-2.5 h-2.5 text-[rgba(255,255,255,0.7)]" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="rgba(255,255,255,0.7)" viewBox="0 0 24 24"
+                                    stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan-basic-feature4">Asosiy SEO</span>
                         </div>
                         <div class="flex items-start gap-2.5">
                             <div
                                 class="w-4 h-4 bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-2.5 h-2.5 text-[rgba(255,255,255,0.7)]" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="rgba(255,255,255,0.7)" viewBox="0 0 24 24"
+                                    stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan-basic-feature5">2 hafta texnik yordam</span>
                         </div>
                     </div>
-
-                    <a href="#contact"
-                        class="w-full block text-center px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-[rgba(0,255,170,0.1)] hover:border-[rgba(0,255,170,0.3)]"
-                        data-key="plan-order" style="letter-spacing: -0.01em;">Buyurtma berish</a>
+                    <button onclick="openOrderModal('order-service-landing')"
+                        class="w-full block text-center px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-[rgba(0,255,170,0.1)] hover:border-[rgba(0,255,170,0.3)] cursor-pointer"
+                        data-key="plan-order">Buyurtma berish</button>
                 </div>
 
-                <!-- Plan 2: Standard -->
+                <!-- Standard / Popular -->
                 <div class="relative bg-[rgba(0,255,170,0.03)] backdrop-blur-sm p-6 border-2 border-[rgba(0,255,170,0.3)] transition-all duration-500"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                     <div class="absolute top-4 right-4 bg-[#00ffaa] text-black px-2.5 py-1 text-xs font-semibold"
-                        data-key="badge-popular" style="letter-spacing: 0.02em;">
-                        MASHHUR
-                    </div>
-
+                        data-key="badge-popular" style="letter-spacing:0.02em;">MASHHUR</div>
                     <div class="mt-2 mb-6">
                         <div class="w-10 h-10 bg-[rgba(0,255,170,0.15)] flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00ffaa"
@@ -874,24 +566,22 @@
                             </svg>
                         </div>
                         <h3 class="text-lg font-semibold mb-2 text-white" data-key="plan1-title"
-                            style="letter-spacing: -0.01em;">Veb-sayt Yaratish</h3>
+                            style="letter-spacing:-0.01em;">Veb-sayt Yaratish</h3>
                         <div class="flex items-baseline gap-1.5 mt-4">
                             <span class="text-3xl font-semibold text-[#00ffaa]"
-                                style="letter-spacing: -0.02em;">100$</span>
+                                style="letter-spacing:-0.02em;">100$</span>
                             <span class="text-xs text-[rgba(255,255,255,0.5)] font-medium">USD</span>
                         </div>
                     </div>
-
                     <div class="space-y-2.5 mb-6 pt-4 border-t border-[rgba(0,255,170,0.1)]">
                         <div class="flex items-start gap-2.5">
                             <div
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.15)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan1-feature1">Zamonaviy dizayn</span>
                         </div>
                         <div class="flex items-start gap-2.5">
@@ -899,10 +589,9 @@
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.15)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan1-feature2">Responsive (mobil moslashuvchan)</span>
                         </div>
                         <div class="flex items-start gap-2.5">
@@ -910,10 +599,9 @@
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.15)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan1-feature3">5 sahifagacha</span>
                         </div>
                         <div class="flex items-start gap-2.5">
@@ -921,10 +609,9 @@
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.15)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan1-feature4">SEO optimizatsiya</span>
                         </div>
                         <div class="flex items-start gap-2.5">
@@ -932,27 +619,22 @@
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.15)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan1-feature5">1 oy bepul texnik yordam</span>
                         </div>
                     </div>
-
-                    <a href="#contact"
-                        class="w-full block text-center px-5 py-2.5 bg-[#00ffaa] text-black text-xs font-semibold transition-all duration-300 hover:bg-[#00dd99]"
-                        data-key="plan-order" style="letter-spacing: -0.01em;">Buyurtma berish</a>
+                    <button onclick="openOrderModal('order-service-standard')"
+                        class="w-full block text-center px-5 py-2.5 bg-[#00ffaa] text-black text-xs font-semibold transition-all duration-300 hover:bg-[#00dd99] cursor-pointer"
+                        data-key="plan-order">Buyurtma berish</button>
                 </div>
 
-                <!-- Plan 3: Custom -->
+                <!-- Premium -->
                 <div class="relative bg-[rgba(255,255,255,0.02)] backdrop-blur-sm p-6 border border-[rgba(255,255,255,0.08)] transition-all duration-500 hover:border-[rgba(0,255,170,0.3)]"
                     data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
                     <div class="absolute top-4 right-4 bg-[rgba(0,255,170,0.1)] text-[#00ffaa] px-2.5 py-1 text-xs font-medium border border-[rgba(0,255,170,0.2)]"
-                        data-key="badge-premium" style="letter-spacing: 0.02em;">
-                        PREMIUM
-                    </div>
-
+                        data-key="badge-premium" style="letter-spacing:0.02em;">PREMIUM</div>
                     <div class="mt-2 mb-6">
                         <div class="w-10 h-10 bg-[rgba(0,255,170,0.1)] flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00ffaa"
@@ -962,23 +644,21 @@
                             </svg>
                         </div>
                         <h3 class="text-lg font-semibold mb-2 text-white" data-key="plan2-title"
-                            style="letter-spacing: -0.01em;">Maxsus Loyiha</h3>
+                            style="letter-spacing:-0.01em;">Maxsus Loyiha</h3>
                         <div class="flex items-baseline gap-1.5 mt-4">
                             <span class="text-3xl font-semibold text-white" data-key="plan2-price"
-                                style="letter-spacing: -0.02em;">Custom</span>
+                                style="letter-spacing:-0.02em;">Custom</span>
                         </div>
                     </div>
-
                     <div class="space-y-2.5 mb-6 pt-4 border-t border-[rgba(255,255,255,0.06)]">
                         <div class="flex items-start gap-2.5">
                             <div
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan2-feature1">Barcha standart xususiyatlar</span>
                         </div>
                         <div class="flex items-start gap-2.5">
@@ -986,10 +666,9 @@
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan2-feature2">Cheksiz sahifalar</span>
                         </div>
                         <div class="flex items-start gap-2.5">
@@ -997,10 +676,9 @@
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan2-feature3">Maxsus funksionallik</span>
                         </div>
                         <div class="flex items-start gap-2.5">
@@ -1008,10 +686,9 @@
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan2-feature4">Admin panel</span>
                         </div>
                         <div class="flex items-start gap-2.5">
@@ -1019,51 +696,39 @@
                                 class="w-4 h-4 bg-[rgba(0,255,170,0.1)] flex items-center justify-center flex-shrink-0 mt-0.5">
                                 <svg class="w-2.5 h-2.5 text-[#00ffaa]" fill="none" stroke="currentColor"
                                     viewBox="0 0 24 24" stroke-width="3">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                                 </svg>
-                            </div>
-                            <span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
+                            </div><span class="text-xs text-[rgba(255,255,255,0.7)] leading-relaxed"
                                 data-key="plan2-feature7">Ustuvor qo'llab-quvvatlash</span>
                         </div>
                     </div>
-
-                    <a href="#contact"
-                        class="w-full block text-center px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-[rgba(0,255,170,0.1)] hover:border-[rgba(0,255,170,0.3)]"
-                        data-key="plan-order" style="letter-spacing: -0.01em;">Buyurtma berish</a>
+                    <button onclick="openOrderModal('order-service-custom')"
+                        class="w-full block text-center px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-[rgba(0,255,170,0.1)] hover:border-[rgba(0,255,170,0.3)] cursor-pointer"
+                        data-key="plan-order">Buyurtma berish</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section-->
+    <!-- ═══ CONTACT ═══ -->
     <section class="contact bg-black text-white py-20 relative overflow-hidden max-w-7xl mx-auto px-4" id="contact">
-        <!-- Grok-style glow elements -->
-        <div class="grok-glow absolute w-64 h-64 rounded-full bg-[#00FFAA] blur-3xl opacity-20"
-            style="top: 40%; right: 20%;"></div>
-        <div class="grok-glow absolute w-72 h-72 rounded-full bg-[#00FFAA] blur-3xl opacity-15"
-            style="bottom: 10%; left: 15%;"></div>
 
+        </div>
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-semibold mb-3 text-white tracking-tight text-center"
-                data-key="contact-title" data-aos="fade-up" data-aos-duration="1000">
-                Bog'lanish</h2>
+                data-key="contact-title" data-aos="fade-up" data-aos-duration="1000">Bog'lanish</h2>
             <p class="text-center text-sm text-[rgba(255,255,255,0.5)] mb-20 max-w-2xl mx-auto" data-aos="fade-up"
-                data-aos-duration="1000" data-aos-delay="100">
-                Birgalikda ajoyib loyihalar yaratamiz
-            </p>
-
+                data-aos-duration="1000" data-aos-delay="100">Birgalikda ajoyib loyihalar yaratamiz</p>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Contact Info -->
+                <!-- Info -->
                 <div class="contact-info backdrop-blur-sm bg-[rgba(255,255,255,0.02)] p-8 border border-[rgba(255,255,255,0.08)]"
                     data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                     <h3 class="text-2xl font-semibold mb-2 text-white tracking-tight" data-key="contact-subtitle">
                         Aloqaga chiqing</h3>
-                    <p class=" text-sm text-[rgba(255,255,255,0.5)] mb-20 " data-key="contact-description">
-                        Loyihangiz yoki xizmatlarimiz haqida ko'proq bilish uchun biz bilan bog'laning</p>
-
+                    <p class="text-sm text-[rgba(255,255,255,0.5)] mb-20" data-key="contact-description">Loyihangiz yoki
+                        xizmatlarimiz haqida ko'proq bilish uchun biz bilan bog'laning</p>
                     <div class="space-y-5">
-                        <div class="flex items-start space-x-3" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-delay="600">
+                        <div class="flex items-start space-x-3">
                             <div class="bg-[rgba(0,255,170,0.08)] p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00FFAA"
                                     class="w-5 h-5">
@@ -1071,14 +736,11 @@
                                         d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.2-.04-.28-.02-.12.02-1.99 1.27-5.62 3.72-.53.37-1.01.55-1.44.54-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 4-1.74 6.68-2.88 8.03-3.44 3.82-1.59 4.61-1.87 5.13-1.87.11 0 .37.03.54.17.14.12.18.28.2.44-.01.06.01.24 0 .38z" />
                                 </svg>
                             </div>
-                            <div>
-                                <strong class="block text-sm font-medium text-white mb-0.5">Telegram</strong>
+                            <div><strong class="block text-sm font-medium text-white mb-0.5">Telegram</strong>
                                 <p class="text-gray-500 text-sm">@nurkomUz</p>
                             </div>
                         </div>
-
-                        <div class="flex items-start space-x-3" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-delay="700">
+                        <div class="flex items-start space-x-3">
                             <div class="bg-[rgba(0,255,170,0.08)] p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#00FFAA"
                                     class="w-5 h-5">
@@ -1086,14 +748,11 @@
                                         d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                                 </svg>
                             </div>
-                            <div>
-                                <strong class="block text-sm font-medium text-white mb-0.5">Instagram</strong>
+                            <div><strong class="block text-sm font-medium text-white mb-0.5">Instagram</strong>
                                 <p class="text-gray-500 text-sm">@nurkom.uz</p>
                             </div>
                         </div>
-
-                        <div class="flex items-start space-x-3" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-delay="400">
+                        <div class="flex items-start space-x-3">
                             <div class="bg-[rgba(0,255,170,0.08)] p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
                                     class="w-5 h-5">
@@ -1101,14 +760,11 @@
                                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <div>
-                                <strong class="block text-sm font-medium text-white mb-0.5">Email</strong>
+                            <div><strong class="block text-sm font-medium text-white mb-0.5">Email</strong>
                                 <p class="text-gray-500 text-sm">info@nurkom.uz</p>
                             </div>
                         </div>
-
-                        <div class="flex items-start space-x-3" data-aos="fade-up" data-aos-duration="800"
-                            data-aos-delay="500">
+                        <div class="flex items-start space-x-3">
                             <div class="bg-[rgba(0,255,170,0.08)] p-2.5">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#00FFAA"
                                     class="w-5 h-5">
@@ -1118,58 +774,50 @@
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                 </svg>
                             </div>
-                            <div>
-                                <strong class="block text-sm font-medium text-white mb-0.5"
+                            <div><strong class="block text-sm font-medium text-white mb-0.5"
                                     data-key="contact-address">Manzil</strong>
                                 <p class="text-gray-500 text-sm">Samarkand, O'zbekiston</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
+                <!-- Form -->
                 <div class="contact-form backdrop-blur-sm bg-[rgba(255,255,255,0.02)] p-8 border border-[rgba(255,255,255,0.08)]"
                     data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <h3 class="text-2xl font-semibold mb-6 text-white tracking-tight" data-key="contact-form-title">
                         Xabar yuboring</h3>
-
                     <form id="contactForm" class="space-y-4">
-                        <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <div>
                             <label for="name" class="block text-gray-500 mb-1.5 text-xs font-medium tracking-wide"
                                 data-key="form-name">ISM</label>
                             <input type="text" id="name" name="name"
                                 class="w-full px-4 py-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] focus:outline-none focus:border-[#00FFAA] text-white text-sm transition-all duration-300"
                                 required placeholder="Ismingiz">
                         </div>
-
-                        <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        <div>
                             <label for="phone" class="block text-gray-500 mb-1.5 text-xs font-medium tracking-wide"
                                 data-key="form-phone">TELEFON</label>
                             <input type="tel" id="phone" name="phone"
                                 class="w-full px-4 py-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] focus:outline-none focus:border-[#00FFAA] text-white text-sm transition-all duration-300"
                                 required placeholder="+998 90 000 00 00">
                         </div>
-
-                        <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                        <div>
                             <label for="telegram" class="block text-gray-500 mb-1.5 text-xs font-medium tracking-wide"
                                 data-key="form-telegram">TELEGRAM</label>
                             <input type="text" id="telegram" name="telegram"
                                 class="w-full px-4 py-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] focus:outline-none focus:border-[#00FFAA] text-white text-sm transition-all duration-300"
                                 placeholder="@username">
                         </div>
-
-                        <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                        <div>
                             <label for="message" class="block text-gray-500 mb-1.5 text-xs font-medium tracking-wide"
                                 data-key="form-message">XABAR</label>
                             <textarea id="message" name="message" rows="3"
                                 class="w-full px-4 py-3 bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] focus:outline-none focus:border-[#00FFAA] text-white text-sm resize-none transition-all duration-300"
                                 placeholder="Xabaringiz..."></textarea>
                         </div>
-
                         <button type="submit" id="submitBtn"
-                            class="w-full py-3 px-6 bg-[#00FFAA] text-black rounded-none font-medium text-sm transition-all duration-300 relative overflow-hidden hover:bg-[#00e69a] active:scale-[0.98]"
-                            data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
-                            <span class="relative z-10" data-key="form-submit">Yuborish</span>
+                            class="w-full py-3 px-6 bg-[#00FFAA] text-black font-medium text-sm transition-all duration-300 hover:bg-[#00e69a] active:scale-[0.98]">
+                            <span data-key="form-submit">Yuborish</span>
                         </button>
                     </form>
                 </div>
@@ -1177,9 +825,97 @@
         </div>
     </section>
 
-    <!-- Success Modal -->
+    <!-- ═══════════════════════════════════════
+         PORTFOLIO DETAIL MODAL
+    ═══════════════════════════════════════ -->
+    <div id="portfolioModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4"
+        style="background:rgba(0,0,0,0.85);backdrop-filter:blur(6px);">
+        <div
+            class="modal-box relative bg-[#0a0a0a] border border-[rgba(255,255,255,0.08)] w-full max-w-2xl max-h-[90vh] overflow-y-auto modal-scroll">
+            <button id="pModal-close"
+                class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center text-[rgba(255,255,255,0.4)] hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="w-full aspect-video overflow-hidden bg-[rgba(255,255,255,0.03)]">
+                <img id="pModal-img" src="" alt="" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+                <div class="mb-4">
+                    <span id="pModal-category"
+                        class="text-[10px] font-medium text-[#00ffaa] uppercase tracking-widest mb-2 block"></span>
+                    <h3 id="pModal-title" class="text-xl font-semibold text-white" style="letter-spacing:-0.01em;"></h3>
+                </div>
+                <p id="pModal-desc" class="text-sm text-[rgba(255,255,255,0.6)] leading-relaxed mb-6"></p>
+                <div class="flex gap-3">
+                    <a id="pModal-link" href="#" target="_blank"
+                        class="px-5 py-2.5 bg-[#00ffaa] text-black text-xs font-semibold transition-all duration-300 hover:bg-[#00dd99]"></a>
+                    <button id="pModal-close-btn"
+                        class="px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-[rgba(255,255,255,0.08)]"
+                        data-key="portfolio-close">Yopish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         ORDER MODAL
+    ═══════════════════════════════════════ -->
+    <div id="orderModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4"
+        style="background:rgba(0,0,0,0.85);backdrop-filter:blur(6px);">
+        <div class="modal-box relative bg-[#0a0a0a] border border-[rgba(255,255,255,0.08)] w-full max-w-md">
+            <button id="orderModal-close"
+                class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-[rgba(255,255,255,0.4)] hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="p-6">
+                <p id="orderModalLabel" class="text-[10px] font-medium text-[#00ffaa] uppercase tracking-widest mb-1"
+                    data-key="order-modal-label">Buyurtma</p>
+                <h3 id="orderModalTitle" class="text-lg font-semibold text-white mb-1" data-key="order-modal-title"
+                    style="letter-spacing:-0.01em;">Xizmat So'rovi</h3>
+                <p id="orderServiceLabel" class="text-xs text-[rgba(255,255,255,0.4)] mb-6"></p>
+                <form id="orderForm" class="space-y-3">
+                    <div>
+                        <label id="orderFormNameLabel"
+                            class="block text-[rgba(255,255,255,0.4)] mb-1 text-[10px] font-medium tracking-widest uppercase"
+                            data-key="order-form-name">Ism</label>
+                        <input type="text" name="name" class="order-input" required placeholder="Ismingiz" />
+                    </div>
+                    <div>
+                        <label id="orderFormPhoneLabel"
+                            class="block text-[rgba(255,255,255,0.4)] mb-1 text-[10px] font-medium tracking-widest uppercase"
+                            data-key="order-form-phone">Telefon</label>
+                        <input type="tel" name="phone" class="order-input" required placeholder="+998 90 000 00 00" />
+                    </div>
+                    <div>
+                        <label id="orderFormTelegramLabel"
+                            class="block text-[rgba(255,255,255,0.4)] mb-1 text-[10px] font-medium tracking-widest uppercase"
+                            data-key="order-form-telegram">Telegram</label>
+                        <input type="text" name="telegram" class="order-input" placeholder="@username" />
+                    </div>
+                    <div>
+                        <label id="orderFormMessageLabel"
+                            class="block text-[rgba(255,255,255,0.4)] mb-1 text-[10px] font-medium tracking-widest uppercase"
+                            data-key="order-form-message">Xabar</label>
+                        <textarea name="message" rows="3" class="order-input resize-none"
+                            placeholder="Loyiha haqida qisqacha..."></textarea>
+                    </div>
+                    <button type="submit" id="orderSubmitBtn"
+                        class="w-full py-2.5 bg-[#00FFAA] text-black text-xs font-semibold transition-all duration-300 hover:bg-[#00dd99] active:scale-[0.98] mt-2"
+                        data-key="order-form-submit">Yuborish</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ SUCCESS MODAL ═══ -->
     <div id="successModal"
-        class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-[110] hidden">
         <div class="bg-black border border-[#00FFAA] p-8 max-w-md w-full mx-4 relative overflow-hidden">
             <div
                 class="absolute w-32 h-32 rounded-full bg-[#00FFAA] blur-3xl opacity-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -1193,19 +929,18 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-[#00FFAA] mb-2">Muvaffaqiyat!</h3>
-                <p class="text-gray-300 mb-6">Xabaringiz muvaffaqiyatli yuborildi. Tez orada siz bilan bog'lanamiz.</p>
+                <h3 class="text-2xl font-bold text-[#00FFAA] mb-2" data-key="modal-success-title">Muvaffaqiyat!</h3>
+                <p class="text-gray-300 mb-6" data-key="modal-success-text">Xabaringiz muvaffaqiyatli yuborildi. Tez
+                    orada siz bilan bog'lanamiz.</p>
                 <button id="closeModal"
-                    class="px-6 py-2 bg-gradient-to-r from-[#00FFAA] to-[#00FFAA] text-black font-medium transition duration-300 hover:shadow-lg hover:shadow-[#00FFAA]/25">
-                    OK
-                </button>
+                    class="px-6 py-2 bg-[#00FFAA] text-black font-medium transition duration-300 hover:bg-[#00dd99]">OK</button>
             </div>
         </div>
     </div>
 
-    <!-- Error Modal -->
+    <!-- ═══ ERROR MODAL ═══ -->
     <div id="errorModal"
-        class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        class="fixed inset-0 bg-black bg-opacity-80 backdrop-blur-sm flex items-center justify-center z-[110] hidden">
         <div class="bg-black border border-red-500 p-8 max-w-md w-full mx-4 relative overflow-hidden">
             <div
                 class="absolute w-32 h-32 rounded-full bg-red-500 blur-3xl opacity-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -1220,220 +955,41 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="text-2xl font-bold text-red-500 mb-2">Xatolik!</h3>
-                <p class="text-gray-300 mb-6">Xabar yuborishda xatolik yuz berdi. Iltimos, qayta urinib ko'ring.</p>
+                <h3 class="text-2xl font-bold text-red-500 mb-2" data-key="modal-error-title">Xatolik!</h3>
+                <p class="text-gray-300 mb-6" data-key="modal-error-text">Xabar yuborishda xatolik yuz berdi. Iltimos,
+                    qayta urinib ko'ring.</p>
                 <button id="closeErrorModal"
-                    class="px-6 py-2 bg-gradient-to-r from-red-500 to-red-500 text-white font-medium transition duration-300 hover:shadow-lg hover:shadow-red-500/25">
-                    OK
-                </button>
+                    class="px-6 py-2 bg-red-500 text-white font-medium transition duration-300 hover:bg-red-600">OK</button>
             </div>
         </div>
     </div>
 
+    <!-- ═══ FOOTER ═══ -->
     <footer class="bg-black py-6 border-t border-gray-800">
         <div class="container mx-auto px-4">
-            <p class="text-center text-gray-400 text-sm" data-key="footer-text">
-                © 2026 Nurkom — Barcha huquqlar himoyalangan
-            </p>
+            <p class="text-center text-gray-400 text-sm" data-key="footer-text">© 2026 Nurkom — Barcha huquqlar
+                himoyalangan</p>
         </div>
     </footer>
 
-    <!-- ==================== JS SCRIPTS (ENG PASTDA) ==================== -->
-
-    <!-- External JS Libraries -->
+    <!-- ═══ SCRIPTS ═══ -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Local JS -->
     <script src="./script.js"></script>
-
-    <!-- AOS Init -->
     <script>
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out',
-            once: true,
-            offset: 100
-        });
-    </script>
+        AOS.init({ duration: 800, easing: 'ease-out', once: true, offset: 100 });
 
-    <!-- Active Nav Link on Scroll -->
-    <script>
+        // Active nav on scroll
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
-
         function setActiveLink() {
             let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.getAttribute('id'); });
+            navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#' + current) l.classList.add('active'); });
         }
-
         window.addEventListener('scroll', setActiveLink);
         window.addEventListener('load', setActiveLink);
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
+        navLinks.forEach(l => l.addEventListener('click', function () { navLinks.forEach(x => x.classList.remove('active')); this.classList.add('active'); }));
     </script>
-
-    <!-- Portfolio Category Filter -->
-    <script>
-        const categoryBtns = document.querySelectorAll('.category-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        categoryBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const category = btn.dataset.category;
-                categoryBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                portfolioItems.forEach(item => {
-                    if (category === 'all' || item.dataset.category === category) {
-                        item.classList.remove('hidden');
-                    } else {
-                        item.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
-
-    <!-- Contact Form & Telegram Bot -->
-    <script>
-        const BOT_TOKEN = '8081090929:AAHbcMpCn9Hs5PEFsUbNA6dhR5JRotkUiYM';
-        const CHAT_ID = '7241567559';
-
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const successModal = document.getElementById('successModal');
-        const errorModal = document.getElementById('errorModal');
-        const closeModal = document.getElementById('closeModal');
-        const closeErrorModal = document.getElementById('closeErrorModal');
-
-        async function sendToTelegram(message) {
-            const telegramUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-            const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-            const url = proxyUrl + telegramUrl;
-
-            const data = {
-                chat_id: CHAT_ID,
-                text: message,
-                parse_mode: 'HTML'
-            };
-
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const result = await response.json();
-                return result.ok;
-            } catch (error) {
-                try {
-                    const fallbackUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-                    const formData = new FormData();
-                    formData.append('chat_id', CHAT_ID);
-                    formData.append('text', message);
-                    formData.append('parse_mode', 'HTML');
-
-                    await fetch(fallbackUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        body: formData
-                    });
-
-                    return true;
-                } catch (fallbackError) {
-                    return false;
-                }
-            }
-        }
-
-        function formatMessage(formData) {
-            const name = formData.get('name');
-            const phone = formData.get('phone');
-            const telegram = formData.get('telegram');
-            const message = formData.get('message');
-            const currentDate = new Date().toLocaleString('uz-UZ');
-
-            let telegramMessage = `<b>🆕 Yangi xabar SkyFlow Technologies saytidan</b>\n\n`;
-            telegramMessage += `<b>📅 Sana:</b> ${currentDate}\n`;
-            telegramMessage += `<b>👤 Ism:</b> ${name}\n`;
-            telegramMessage += `<b>📞 Telefon:</b> ${phone}\n`;
-            if (telegram && telegram.trim() !== '') {
-                telegramMessage += `<b>📱 Telegram:</b> ${telegram}\n`;
-            }
-            if (message && message.trim() !== '') {
-                telegramMessage += `<b>💬 Xabar:</b>\n${message}`;
-            }
-            return telegramMessage;
-        }
-
-        function showLoading() {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="relative z-10">Yuborilmoqda...</span>';
-        }
-
-        function hideLoading() {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<span class="relative z-10">Yuborish</span>';
-        }
-
-        function showSuccessModal() { successModal.classList.remove('hidden'); }
-        function showErrorModal() { errorModal.classList.remove('hidden'); }
-        function hideModals() {
-            successModal.classList.add('hidden');
-            errorModal.classList.add('hidden');
-        }
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            showLoading();
-            const formData = new FormData(contactForm);
-            const message = formatMessage(formData);
-            const success = await sendToTelegram(message);
-            hideLoading();
-            if (success) {
-                contactForm.reset();
-                showSuccessModal();
-            } else {
-                showErrorModal();
-            }
-        });
-
-        closeModal.addEventListener('click', hideModals);
-        closeErrorModal.addEventListener('click', hideModals);
-
-        successModal.addEventListener('click', (e) => {
-            if (e.target === successModal) hideModals();
-        });
-        errorModal.addEventListener('click', (e) => {
-            if (e.target === errorModal) hideModals();
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') hideModals();
-        });
-    </script>
-
 </body>
 
 </html>
