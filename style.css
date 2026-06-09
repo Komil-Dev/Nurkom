@@ -354,12 +354,6 @@ label {
   backdrop-filter: blur(10px);
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 255, 170, 0.2);
-  border-color: rgba(0, 255, 170, 0.5);
-}
-
 .service-icon {
   width: 80px;
   height: 80px;
@@ -409,12 +403,6 @@ label {
   overflow: hidden;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-}
-
-.portfolio-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 255, 170, 0.2);
-  border-color: rgba(0, 255, 170, 0.3);
 }
 
 .portfolio-img {
