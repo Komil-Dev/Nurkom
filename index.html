@@ -7,8 +7,8 @@
     <title>Nurkom</title>
     <meta name="seobility" content="4d546b5734de5bf65a31753854e4d6ed">
     <meta name="google-site-verification" content="ulcgv30r6utOEc2tqLB4BYX5BTppv4IYcrG9nSQ-x2U" />
-    <link rel="icon" href="./images/logos/photo_2025-11-22_20-57-29.jpg">
 
+    <link rel="website icon" href="./images/logos/photo_2025-11-22_20-57-29.jpg" type="png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,7 +83,13 @@
         }
     }
 
-
+    .grid-pattern {
+        background-image:
+            linear-gradient(rgba(34, 197, 94, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
+        animation: grid-move 4s linear infinite;
+    }
 
     .glow-effect {
         animation: pulse-glow 3s ease-in-out infinite;
@@ -246,7 +252,7 @@
                             </a>
                         </div>
                     </div>
-                    <a onclick="openOrderModal('order-service-website')"
+                    <a href="#contact"
                         class="accent-color px-5 py-2 font-medium transition-all duration-300 border accent-border text-xs uppercase tracking-wider hover:bg-opacity-10 hover:bg-gray-800"
                         data-key="nav-contact" data-aos="fade-down" data-aos-duration="800" data-aos-delay="350"
                         style="letter-spacing:0.05em;">Bog'lanish</a>
@@ -548,8 +554,10 @@
                         </div>
                     </div>
                     <button onclick="openOrderModal('order-service-landing')"
-                        class="w-full block text-center px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-[rgba(0,255,170,0.1)] hover:border-[rgba(0,255,170,0.3)] cursor-pointer"
-                        data-key="plan-order">Buyurtma berish</button>
+                        class="w-full block text-center px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] rounded-none transition-all duration-300 hover:bg-[rgba(0,255,170,0.1)] hover:border-[rgba(0,255,170,0.3)] cursor-pointer"
+                        data-key="plan-order">
+                        Buyurtma berish
+                    </button>
                 </div>
 
                 <!-- Standard / Popular -->
@@ -626,8 +634,10 @@
                         </div>
                     </div>
                     <button onclick="openOrderModal('order-service-standard')"
-                        class="w-full block text-center px-5 py-2.5 bg-[#00ffaa] text-black text-xs font-semibold transition-all duration-300 hover:bg-[#00dd99] cursor-pointer"
-                        data-key="plan-order">Buyurtma berish</button>
+                        class="w-full block text-center px-5 py-2.5 bg-[#00ffaa] text-black text-xs font-semibold rounded-none transition-all duration-300 hover:bg-[#00dd99] cursor-pointer"
+                        data-key="plan-order">
+                        Buyurtma berish
+                    </button>
                 </div>
 
                 <!-- Premium -->
@@ -702,17 +712,20 @@
                                 data-key="plan2-feature7">Ustuvor qo'llab-quvvatlash</span>
                         </div>
                     </div>
-                    <button onclick="openOrderModal('order-service-custom')"
-                        class="w-full block text-center px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-[rgba(0,255,170,0.1)] hover:border-[rgba(0,255,170,0.3)] cursor-pointer"
-                        data-key="plan-order">Buyurtma berish</button>
+                    <button onclick="openOrderModal('order-service-landing')"
+                        class="w-full block text-center px-5 py-2.5 bg-[rgba(255,255,255,0.05)] text-white text-xs font-medium border border-[rgba(255,255,255,0.1)] rounded-none transition-all duration-300 hover:bg-[rgba(0,255,170,0.1)] hover:border-[rgba(0,255,170,0.3)] cursor-pointer"
+                        data-key="plan-order">
+                        Buyurtma berish
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ═══ CONTACT ═══ -->
-    <section class="contact bg-black text-white py-20 relative overflow-hidden max-w-7xl mx-auto px-4" id="contact">
-
+    <section class="contact bg-black text-white py-20 relative overflow-hidden max-w-7xl mx-auto px-4 " id="contact">
+        <div class="absolute w-64 h-64 rounded-full bg-[#00FFAA] blur-3xl opacity-20" style="top:40%;right:20%;"></div>
+        <div class="absolute w-72 h-72 rounded-full bg-[#00FFAA] blur-3xl opacity-15" style="bottom:10%;left:15%;">
         </div>
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-semibold mb-3 text-white tracking-tight text-center"
@@ -816,7 +829,7 @@
                                 placeholder="Xabaringiz..."></textarea>
                         </div>
                         <button type="submit" id="submitBtn"
-                            class="w-full py-3 px-6 bg-[#00FFAA] text-black font-medium text-sm transition-all duration-300 hover:bg-[#00e69a] active:scale-[0.98]">
+                            class="w-full py-3 px-6 bg-[#00FFAA] text-black font-medium text-sm rounded-none transition-all duration-300 hover:bg-[#00e69a] active:scale-[0.98]">
                             <span data-key="form-submit">Yuborish</span>
                         </button>
                     </form>
@@ -906,8 +919,10 @@
                             placeholder="Loyiha haqida qisqacha..."></textarea>
                     </div>
                     <button type="submit" id="orderSubmitBtn"
-                        class="w-full py-2.5 bg-[#00FFAA] text-black text-xs font-semibold transition-all duration-300 hover:bg-[#00dd99] active:scale-[0.98] mt-2"
-                        data-key="order-form-submit">Yuborish</button>
+                        class="w-full py-2.5 bg-[#00FFAA] text-black text-xs font-semibold rounded-none transition-all duration-300 hover:bg-[#00dd99] active:scale-[0.98] mt-2"
+                        data-key="order-form-submit">
+                        Yuborish
+                    </button>
                 </form>
             </div>
         </div>

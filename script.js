@@ -753,7 +753,7 @@ function buildPortfolioGrid() {
         <p class="p-card-short" style="font-size:0.875rem;line-height:1.6;color:rgba(255,255,255,0.6);margin-bottom:1.5rem;">
           ${t("portfolio-short-" + p.id)}
         </p>
-        <span class="portfolio-button p-card-btn" style="font-size:0.875rem;font-weight:500;pointer-events:none;">
+        <span class="portfolio-button p-card-btn" style="font-size:0.875rem;font-weight:500;pointer-events:none;"border-radius:0px>
           ${t("portfolio-read-more")}
         </span>
       </div>
